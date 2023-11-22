@@ -14,25 +14,31 @@
     <div id="app">
         <div class="container-fluid">
             <div id="header" class="row position-fixed start-0 end-0">
-                <div class="header__logo col">
-                    <a href="#"><img class="header__logo--img img-fluid" src="../images/logo.png" alt="Logo"></a>
+                <div class="header__logo col pl-3">
+                    <a href="#"><img class="header__logo--img img-fluid" src="../images/Logo/logo.png" alt="Logo"></a>
                 </div>
                 <div class="header__total col-8">
                     <ul class="header__total--list">
-                        <li><a href="#" class="text-decoration-none">Giày Nam</a></li>
-                        <li><a href="#" class="text-decoration-none">Giày Nữ</a></li>
+                        <li><a href="#" class="text-decoration-none">danh mục sản phẩm</a></li>
+                        <li><a href="#" class="text-decoration-none">Thương Hiệu</a></li>
                         <li><a href="#" class="text-decoration-none">Chính Sách Bảo Hành</a></li>
-                        <li><a href="#" class="text-decoration-none">Thông Tin Cửa Hàng</a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="text-decoration-none">Đăng Nhập</a>
-                        </li>
+                        <li><a href="#" class="text-decoration-none">Thông Tin Cửa Hàng</a></li>
                     </ul>
                 </div>
-                <div class="header__search col-3">
+                <div class="header__search col">
                     <div class="header__search--total">
                         <a href="#" class="text-decoration-none"><i class="ti-search header__search--icon"></i></a>
                         <input class="header__search--input" type="text" placeholder="  Bạn Muốn Tìm Kiếm Gì ?">
+                    </div>
+                </div>
+                <div class="header__login col">
+                    <div class="header__login--total">
+                        <a href="#" class="text-decoration-none"><i class="ti-user header__login--icon"></i></a>
+                    </div>
+                </div>
+                <div class="header__cart col">
+                    <div class="header__cart--total">
+                        <a href="#" class="text-decoration-none"><i class="ti-shopping-cart header__cart--icon"></i></a>
                     </div>
                 </div>
             </div>
