@@ -6,7 +6,7 @@
 
 /* Header */
 #header {
-    background-color: #226fe3;  
+    background-color: #38b6ff;  
 }
 
 
@@ -15,7 +15,7 @@
 .header__total,
 .header__search {
     position: relative;
-    height: 100px;
+    height: 50px;
 }
 
 .header__total {
@@ -25,13 +25,13 @@
 .header__total--list {
     list-style: none;
     display: flex;
-    line-height: 100px;
+    line-height: 50px;
 }
 
 .header__total--list li a{
     color: #fff;
     padding: 0 8px 0 8px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     margin: auto;
     text-transform: uppercase;
@@ -70,14 +70,33 @@
 
 .header__search--total {
     position: absolute;
-    right: 36px;
-    top: 30px;
+    right: -80px;
+    top: 12px;
 }
 
+.header__login--icon {
+    position: absolute;
+    right: 40px;
+    top: 12px;
+}
+
+.header__cart--icon {
+    position: absolute;
+    top: 12px;
+    right: 100px;
+}
+.header__cart--icon,
+.header__login--icon,
 .header__search--icon {
     color: #fff;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
+}
+
+.header__search--icon:hover,
+.header__login--icon:hover,
+.header__cart--icon:hover {
+    color: #ffffffac;
 }
 
 .header__search--total::before {
@@ -91,8 +110,8 @@
 }
 .header__search--input {
     position: absolute;
-    top: -6px;
-    right: 60px;
+    top: -7px;
+    right: 40px;
     width: 200px;
     height: 40px;
     border-radius: 6px;
