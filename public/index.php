@@ -13,7 +13,7 @@
 <body>
     <div id="app">
         <div class="container-fluid">
-            <div id="header" class="row">
+            <div id="header" class="row position-fixed start-0 end-0">
                 <div class="header__logo col">
                     <a href="#"><img class="header__logo--img img-fluid" src="../images/logo.png" alt="Logo"></a>
                 </div>
@@ -30,17 +30,14 @@
                     </ul>
                 </div>
                 <div class="header__search col-3">
-                    <a href="#">
-                        <button class="header__search--btn">
-                            <i class="ti-search header__search--icon"></i>
-                        </button>
-                    </a>
-                    <input class="header__search--input" type="text" placeholder="Bạn Muốn Tìm Kiếm Gì ?">
+                    <div class="header__search--total">
+                        <a href="#" class="text-decoration-none"><i class="ti-search header__search--icon"></i></a>
+                        <input class="header__search--input" type="text" placeholder="  Bạn Muốn Tìm Kiếm Gì ?">
+                    </div>
                 </div>
             </div>
         </div>
         <div id="body">
-    
         </div>
         <div id="footer">
     
