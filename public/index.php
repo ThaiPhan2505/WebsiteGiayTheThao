@@ -19,15 +19,26 @@
                 </div>
                 <div class="header__total col-8">
                     <ul class="header__total--list">
-                        <li><a href="#" class="text-decoration-none">danh mục sản phẩm</a></li>
-                        <li><a href="#" class="text-decoration-none">Thương Hiệu</a></li>
-                        <li><a href="#" class="text-decoration-none">Chính Sách Bảo Hành</a></li>
-                        <li><a href="#" class="text-decoration-none">Thông Tin Cửa Hàng</a></li>
+                        <li>
+                            <a href="#" class="text-decoration-none header__total--item">danh mục sản phẩm</a>
+                            <div class="header__total--subitem">
+                                <h3 class="header__total--des">Nam</h3>
+                                <h3 class="header__total--des">Nữ</h3>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none header__total--item">Thương Hiệu</a>
+                            <div class="header__total--subitem">
+                                
+                            </div>
+                        </li>
+                        <li><a href="#" class="text-decoration-none header__total--item">Chính Sách Bảo Hành</a></li>
+                        <li><a href="#" class="text-decoration-none header__total--item">Thông Tin Cửa Hàng</a></li>
                     </ul>
                 </div>
                 <div class="header__search col">
                     <div class="header__search--total">
-                        <a href="#" class="text-decoration-none"><i class="ti-search header__search--icon"></i></a>
+                        <a href="#" class="text-decoration-none header__total--item"><i class="ti-search header__search--icon"></i></a>
                         <input class="header__search--input" type="text" placeholder="  Bạn Muốn Tìm Kiếm Gì ?">
                     </div>
                 </div>
