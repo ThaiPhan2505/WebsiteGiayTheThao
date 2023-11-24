@@ -26,7 +26,7 @@ CREATE DATABASE IF NOT EXISTS `shop_Adidas` DEFAULT CHARACTER SET utf8 COLLATE u
 USE `shop_Adidas`;
 
 CREATE TABLE `tbl_giay` (
-  `MaGiay` int(10) primary key,
+  `MaGiay` int(10),
   `TenGiay` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `MoTa` text COLLATE utf8_unicode_ci,
   `Gia` float DEFAULT NOT NULL,
@@ -49,7 +49,7 @@ INSERT INTO `tbl_giay`(`MaGiay`, `TenGiay`, `MoTa`, `Gia`, `SoLuongBan`, `DanhGi
 (10, 'GIÀY TENNIS SOLEMATCH CONTROL', 'Độ bền và ổn định đồng nghĩa với sự tự tin trên sân đấu. Đôi giày tennis adidas này giúp bạn kiểm soát thế trận với các vùng TPU được bố trí đặc biệt giúp nâng đỡ phần giữa bàn chân khi di chuyển sang hai bên và bảo vệ các vùng dễ mài mòn. Gót giày đúc 3D cho độ ôm chắc chắn, cùng đế giữa Bounce linh hoạt đảm bảo sải bước êm ái trong từng game, set và match. Ở bên dưới là đế ngoài Adiwear cứng cáp với vân bám kiểu mới cho phong độ thượng thừa.', 3500000, 4, 4, 'Nữ', 'https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/0817500d231c41629775afa100919898_9366/gi%C3%A0y-tennis-solematch-control.jpg');
 
 CREATE TABLE `tbl_nguoidung` (
-  `MaNguoiDung` int(10) primary key,
+  `MaNguoiDung` int(10),
   `TenNguoiDung` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `TenDangNhap` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `MatKhau` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
