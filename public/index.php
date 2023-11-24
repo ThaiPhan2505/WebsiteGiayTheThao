@@ -81,8 +81,96 @@
         </div>
         <div id="body">
         </div>
-        <div id="footer">
+        <div id="footer" class="footer">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Chăm Sóc Khách Hàng</h3>
+                        <ul class="footer__heading-list">
+                            <li class="footer__heading-item">
+                                <a href="" class="footer__heading-link">Trung Tâm Trợ Giúp</a>
+                            </li>
+                            <li class="footer__heading-item">
+                                <a href="" class="footer__heading-link">Trả Hàng - Hoàn Tiền</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Thông Tin Về Cửa Hàng</h3>
+                        <ul class="footer__heading-list">
+                            <li class="footer__heading-item">
+                                <a href="#" class="footer__heading-link">Giới Thiệu Cửa Hàng</a>
+                            </li>
+                            <li class="footer__heading-item">
+                                <a href="#" class="footer__heading-link">Điều Khoản Người Dùng</a>
+                            </li>
+                            <li class="footer__heading-item">
+                                <a href="#" class="footer__heading-link">Chính Sách Bảo Hành</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Tổng Đài Hổ Trợ</h3>
+                        <ul class="footer__heading-list">
+                            <li class="footer__heading-item">
+                                <a href="" class="footer__heading-link">SĐT Kỹ Thuật: 0325411287</a>
+                            </li>
+                            <li class="footer__heading-item">
+                                <a href="" class="footer__heading-link">Tổng Đài Hổ Trợ Khẩn Cấp: 09321254</a>
+                            </li>
+                            <li class="footer__heading-item">
+                                <a href="" class="footer__heading-link">Tổng Đài Xử Lý Sự Cố: 0369987451</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4">
+                        <h3 class="footer__heading">Theo Dõi</h3>
+                        <ul class="footer__heading-list">
+                            <li class="footer__heading-item">
+                                <a href="" class="footer__heading-link">
+                                    <i class="footer__heading-icon-face fab fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="footer__heading-item">
+                                <a href="" class="footer__heading-link">
+                                    <i class="footer__heading-icon-insta fab fa-instagram"></i>
+                                    Instagram
+                                </a>
+                            </li>
+                            <li class="footer__heading-item">
+                                <a href="" class="footer__heading-link">
+                                    <i class="footer__heading-icon-linkin fab fa-linkedin"></i>
+                                    Linked-In
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid__column-2-4 footer--dow">
+                        <h3 class="footer__heading">Tải ứng dụng Adidas trên :</h3>
+                        <div class="footer__heading-download">
+                            <a href="">
+                                <img src="../assets/img/qr-code2.png" alt="" class="footer__heading-download-qr">
+                            </a>
+                            <div class="footer__heading-download-apps">
+                                <a href="">
+                                    <img src="../assets/img/ch-play.png" alt="" class="footer__heading-img">
+                                </a>
+                                <a href="">
+                                    <img src="../assets/img/app-store.png" alt="" class="footer__heading-img">
+                                </a>
     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer__bottom">
+                <div class="grid">
+                    <p class="footer__copyright">© 2023 - Bản Quyền Thuộc Công Ty Giày Adidas - Chi Nhánh Việt Nam.</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
