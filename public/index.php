@@ -168,7 +168,7 @@
     
             <div class="footer__bottom">
                 <div class="grid">
-                    <p class="footer__copyright">© 2023 - Bản Quyền Thuộc Công Ty Giày Adidas - Chi Nhánh Việt Nam.</p>
+                    <p class="footer__copyright">© 2023 - Bản Quyền Thuộc Công Ty Giày PVT - Chi Nhánh Việt Nam.</p>
                 </div>
             </div>
         </div>
