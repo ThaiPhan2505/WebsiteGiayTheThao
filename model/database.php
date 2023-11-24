@@ -17,6 +17,7 @@ class DATABASE{
         catch(PDOException $e) {
             echo "Lỗi kết nối: " . $e->getMessage();
         }
+        return $this->conn;
     }
     public function executeNonQuery($query, $params = [])
     {

@@ -67,8 +67,8 @@ class THUONGHIEU{
     }
 
     public function laydanhsachthuonghieu(){
-        $dbconn = new DATABASE();
-        $dbconn->connect();
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
         try{
             $query = "SELECT * FROM thuonghieu ORDER BY id DESC";
             $cmd = $dbconn->prepare($query);
