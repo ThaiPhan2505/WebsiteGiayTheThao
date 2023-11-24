@@ -29,7 +29,32 @@
                         <li>
                             <a href="#" class="text-decoration-none header__total--item">Thương Hiệu</a>
                             <div class="header__total--subitem">
-                                
+                                <div class="header__total--main">
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../images/Brand/Adidas-removebg-preview.png" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../images/Brand/Conv-removebg-preview.png" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../images/Brand/Gucci-removebg-preview.png" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../images/Brand/MLB-removebg-preview.png" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../images/Brand/NBL.png" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../images/Brand/Nike.png" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../images/Brand/Puma.png" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../images/Brand/Adidas-removebg-preview.png" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                </div>
                             </div>
                         </li>
                         <li><a href="#" class="text-decoration-none header__total--item">Chính Sách Bảo Hành</a></li>
