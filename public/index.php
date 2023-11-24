@@ -147,19 +147,18 @@
                         </ul>
                     </div>
                     <div class="grid__column-2-4 footer--dow">
-                        <h3 class="footer__heading">Tải ứng dụng Adidas trên :</h3>
+                        <h3 class="footer__heading">Tải ứng dụng trên :</h3>
                         <div class="footer__heading-download">
                             <a href="">
-                                <img src="../assets/img/qr-code2.png" alt="" class="footer__heading-download-qr">
+                                <img src="../images/Brand/QR_Code.png" alt="" class="footer__heading-download-qr">
                             </a>
                             <div class="footer__heading-download-apps">
                                 <a href="">
-                                    <img src="../assets/img/ch-play.png" alt="" class="footer__heading-img">
+                                    <img src="../images/Logo/ch-play.png" alt="" class="footer__heading-img">
                                 </a>
                                 <a href="">
-                                    <img src="../assets/img/app-store.png" alt="" class="footer__heading-img">
+                                    <img src="../images/Logo/app-store.png" alt="" class="footer__heading-img">
                                 </a>
-    
                             </div>
                         </div>
                     </div>
