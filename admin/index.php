@@ -1,3 +1,4 @@
-<?php
-<!doctype html>
-php>
+<!DOCTYPE html>
+<html lang="vi">
+
+</html>
