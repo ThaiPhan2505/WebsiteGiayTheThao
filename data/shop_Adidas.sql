@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.56
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
@@ -28,10 +28,10 @@ USE `shop_Adidas`;
 CREATE TABLE `tbl_giay` (
   `MaGiay` int(10) NOT NULL,
   `TenGiay` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `MoTa` text COLLATE utf8_unicode_ci NOT NULL,
-  `Gia` float DEFAULT NULL,
+  `MoTa` text COLLATE utf8_unicode_ci,
+  `Gia` float DEFAULT NOT NULL,
   `SoLuongBan` int(100) NOT NULL,
-  `DanhGia` int(1) NOT NULL,
+  `DanhGia` int(1),
   `LoaiGiay` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `HinhAnh` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
