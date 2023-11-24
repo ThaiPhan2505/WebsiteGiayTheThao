@@ -76,6 +76,9 @@
                     <div class="header__cart--total">
                         <a href="#" class="text-decoration-none"><i class="ti-shopping-cart header__cart--icon"></i></a>
                     </div>
+                    <div class="header__cart--sub">
+                        
+                    </div>
                 </div>
             </div>
         </div>
