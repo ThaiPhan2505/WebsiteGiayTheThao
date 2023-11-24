@@ -126,6 +126,18 @@
     right: 100px;
 }
 
+/* Sub Cart */
+.header__cart--sub {
+    position: absolute;
+    right: 6%;
+    top: 130%;
+    background-color: #38b6ff;
+    width: 25%;
+    height: 350px;
+    overflow: hidden;
+    display: none;
+}
+
 .header__cart--icon,
 .header__login--icon,
 .header__search--icon {
@@ -184,6 +196,10 @@
     transform: scale(1.3);
     opacity: 0.8;
 }
+
+
+
+
 /* Body */
 #body {
     height: 1000px;
