@@ -157,6 +157,7 @@ class THUONGHIEU{
             echo 'Lỗi: ' . $ex->getMessage();
             exit();
         }
+        return true;
     }
 }
 ?>
