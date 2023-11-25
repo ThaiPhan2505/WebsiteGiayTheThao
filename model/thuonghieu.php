@@ -82,7 +82,7 @@ class THUONGHIEU{
         }
     }
     // Thêm
-    public function themdanhsachthuonghieu($thuonghieu){
+    public function themthuonghieu($thuonghieu){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
