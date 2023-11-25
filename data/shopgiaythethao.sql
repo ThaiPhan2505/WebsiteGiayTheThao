@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2023 at 09:55 AM
+-- Generation Time: Nov 25, 2023 at 05:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -131,10 +131,30 @@ CREATE TABLE `size_soluong` (
 
 CREATE TABLE `thuonghieu` (
   `id` int(11) NOT NULL,
-  `tenthuonghieu` int(100) NOT NULL,
+  `tenthuonghieu` varchar(100) NOT NULL,
   `diachi` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL,
   `sdt` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `thuonghieu`
+--
+
+INSERT INTO `thuonghieu` (`id`, `tenthuonghieu`, `diachi`, `email`, `sdt`) VALUES
+(1, 'adidas', 'awdasdad', 'dada@mail.com', '0156324484');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `y_kien`
+--
+
+CREATE TABLE `y_kien` (
+  `id` int(11) NOT NULL,
+  `id_nguoidung` int(11) NOT NULL,
+  `ngayphanhoi` date NOT NULL,
+  `noidung` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -197,6 +217,13 @@ ALTER TABLE `thuonghieu`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `y_kien`
+--
+ALTER TABLE `y_kien`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `phanhoi_nguoidung` (`id_nguoidung`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -234,6 +261,12 @@ ALTER TABLE `size_soluong`
 -- AUTO_INCREMENT for table `thuonghieu`
 --
 ALTER TABLE `thuonghieu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `y_kien`
+--
+ALTER TABLE `y_kien`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -272,6 +305,12 @@ ALTER TABLE `hoadonchitiet`
 --
 ALTER TABLE `size_soluong`
   ADD CONSTRAINT `sizesoluong_giay` FOREIGN KEY (`id_giay`) REFERENCES `giay` (`id`);
+
+--
+-- Constraints for table `y_kien`
+--
+ALTER TABLE `y_kien`
+  ADD CONSTRAINT `phanhoi_nguoidung` FOREIGN KEY (`id_nguoidung`) REFERENCES `nguoidung` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
