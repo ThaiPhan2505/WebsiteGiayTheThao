@@ -227,6 +227,7 @@
     font-weight: 500; 
     padding-bottom: 10px;  
     text-transform: uppercase;
+    user-select: none;
 }
 
 .footer__heading-list {
@@ -245,7 +246,9 @@
 }
 
 .footer__heading-link:hover {
-    text-decoration: underline;
+    padding-left: 16px;
+    font-weight: 700;
+    color: #fff;
 }
 
 .footer__heading-icon-face {
