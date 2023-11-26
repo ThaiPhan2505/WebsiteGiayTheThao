@@ -66,7 +66,7 @@ class THUONGHIEU{
         return $this;
     }
     // Lấy danh sách các thương hiệu
-    public function laydanhsachthuonghieu(){
+    public function layDanhSachThuongHieu(){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -82,7 +82,7 @@ class THUONGHIEU{
         }
     }
     // Thêm
-    public function themthuonghieu($thuonghieu){
+    public function themThuongHieu($thuonghieu){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -103,7 +103,7 @@ class THUONGHIEU{
         }
     }
     // Xóa
-    public function xoathuonghieu($thuonghieu){
+    public function xoaThuongHieu($thuonghieu){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -119,7 +119,7 @@ class THUONGHIEU{
         }
     }
     // Sửa
-    public function suathuonghieu($thuonghieu){
+    public function suaThuongHieu($thuonghieu){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -145,7 +145,7 @@ class THUONGHIEU{
         }
     }
     // Lấy thương hiệu theo id
-    public function laythuonghieuid($id){
+    public function layThuongHieuId($id){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{

@@ -119,7 +119,7 @@ class GIAY{
     }
 
     //Lấy danh sách giày
-    public function laydanhsachgiay(){
+    public function layDanhSachGiay(){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -135,7 +135,7 @@ class GIAY{
         }
     }
     // Lấy giày theo id
-    public function laygiayid($id){
+    public function layGiayId($id){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -153,7 +153,7 @@ class GIAY{
         return true;
     }
     // Lấy giày theo danh mục
-    public function laygiaydanhmuc($id_danhmuc){
+    public function layGiayDanhMuc($id_danhmuc){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -171,7 +171,7 @@ class GIAY{
         return true;
     }
     // Thêm
-    public function themgiay($giay){
+    public function themGiay($giay){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -195,7 +195,7 @@ class GIAY{
         }
     }
     //Xóa
-    public function xoagiay($giay){
+    public function xoaGiay($giay){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -211,7 +211,7 @@ class GIAY{
         }
     }
     // Sửa
-    public function suagiay($giay){
+    public function suaGiay($giay){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
