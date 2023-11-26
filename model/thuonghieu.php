@@ -86,13 +86,14 @@ class THUONGHIEU{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "INSERT INTO thuonghieu(tenthuonghieu, diachi, email, sdt)
-                VALUES(:tenthuonghieu, :diachi, :email, :sdt)";
+            $query = "INSERT INTO thuonghieu(tenthuonghieu, diachi, email, sdt, logo)
+                VALUES(:tenthuonghieu, :diachi, :email, :sdt, :logo)";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":tenthuonghieu", $thuonghieu->tenthuonghieu);
             $cmd->bindValue(":diachi", $thuonghieu->diachi);
             $cmd->bindValue(":email", $thuonghieu->email);
             $cmd->bindValue(":sdt", $thuonghieu->sdt);
+            $cmd->bindValue(":logo", $thuonghieu->logo);
             $kq = $cmd->execute();
             return $kq;
         }
@@ -125,7 +126,8 @@ class THUONGHIEU{
             $query = "UPDATE * FROM thuonghieu SET tenthuonghieu = :tenthuonghieu, 
                                                     diachi = :diachi,
                                                     email = :email,
-                                                    sdt = :sdt
+                                                    sdt = :sdt,
+                                                    logo = :logo
                                                     WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":tenthuonghieu", $thuonghieu->tenthuonghieu);
@@ -133,6 +135,7 @@ class THUONGHIEU{
             $cmd->bindValue(":email", $thuonghieu->email);
             $cmd->bindValue(":sdt", $thuonghieu->sdt);
             $cmd->bindValue(":id", $thuonghieu->id);
+            $cmd->bindValue(":logo", $thuonghieu->logo);
             $kq = $cmd->execute();
             return $kq;
         }
