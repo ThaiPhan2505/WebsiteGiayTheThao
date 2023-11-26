@@ -12,110 +12,101 @@ class GIAY{
 
     public function getId()
     {
-            return $this->id;
+        return $this->id;
     }
 
     public function setId($id): self
     {
-            $this->id = $id;
-
-            return $this;
+        $this->id = $id;
+        return $this;
     }
 
     public function getTengiay()
     {
-            return $this->tengiay;
+        return $this->tengiay;
     }
 
     public function setTengiay($tengiay): self
     {
-            $this->tengiay = $tengiay;
-
-            return $this;
+        $this->tengiay = $tengiay;
+        return $this;
     }
 
     public function getIdThuonghieu()
     {
-            return $this->id_thuonghieu;
+        return $this->id_thuonghieu;
     }
 
     public function setIdThuonghieu($id_thuonghieu): self
     {
-            $this->id_thuonghieu = $id_thuonghieu;
-
-            return $this;
+        $this->id_thuonghieu = $id_thuonghieu;
+        return $this;
     }
 
     public function getMota()
     {
-            return $this->mota;
+        return $this->mota;
     }
 
     public function setMota($mota): self
     {
-            $this->mota = $mota;
-
-            return $this;
+        $this->mota = $mota;
+        return $this;
     }
 
     public function getIdDanhmuc()
     {
-            return $this->id_danhmuc;
+        return $this->id_danhmuc;
     }
 
     public function setIdDanhmuc($id_danhmuc): self
     {
-            $this->id_danhmuc = $id_danhmuc;
-
-            return $this;
+        $this->id_danhmuc = $id_danhmuc;
+        return $this;
     }
 
     public function getGianhap()
     {
-            return $this->gianhap;
+        return $this->gianhap;
     }
 
     public function setGianhap($gianhap): self
     {
-            $this->gianhap = $gianhap;
-
-            return $this;
+        $this->gianhap = $gianhap;
+        return $this;
     }
 
     public function getGiaban()
     {
-            return $this->giaban;
+        return $this->giaban;
     }
 
     public function setGiaban($giaban): self
     {
-            $this->giaban = $giaban;
-
-            return $this;
+        $this->giaban = $giaban;
+        return $this;
     }
 
     public function getDanhgia()
     {
-            return $this->danhgia;
+        return $this->danhgia;
     }
 
     public function setDanhgia($danhgia): self
     {
-            $this->danhgia = $danhgia;
-
-            return $this;
+        $this->danhgia = $danhgia;
+        return $this;
     }
 
     public function getHinhanh()
     {
-            return $this->hinhanh;
+        return $this->hinhanh;
     }
 
     public function setHinhanh($hinhanh): self
     {
-            $this->hinhanh = $hinhanh;
-
-            return $this;
+        $this->hinhanh = $hinhanh;
+        return $this;
     }
 
     //Lấy danh sách giày
