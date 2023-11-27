@@ -84,9 +84,9 @@
                                                 <span class="cart__sub--item-qtn">2</span>
                                             </div>
                                         </div>
-                                        <div class="header__cart-item-body">
-                                            <h6 class="header__cart-item-des">Size : 43</h6>
-                                            <span class="header__cart-item-remove">Xóa</span>
+                                        <div class="cart__sub--item-body">
+                                            <h6 class="cart__sub--item-des">Size : 43</h6>
+                                            <span class="cart__sub--item-remove">Xóa</span>
                                         </div>
                                     </div>
                                 </li>
