@@ -186,6 +186,11 @@
     padding: 12px;
 }
 
+.cart__sub--item:hover {
+    background-color: rgba(151, 193, 255, 0.749);
+    cursor: pointer;
+}
+
 .cart__sub--info {
     width: 100%;
     margin-left: 12px;
