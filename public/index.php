@@ -67,17 +67,36 @@
                         <input class="header__search--input" type="text" placeholder="  Bạn Muốn Tìm Kiếm Gì ?">
                     </div>
                 </div>
-                <div class="header__login col">
-                    <div class="header__login--total">
-                        <a href="#" class="text-decoration-none"><i class="ti-user header__login--icon"></i></a>
-                    </div>
-                </div>
                 <div class="header__cart col">
                     <div class="header__cart--total">
                         <a href="#" class="text-decoration-none"><i class="ti-shopping-cart header__cart--icon"></i></a>
+                        <div class="header__cart--sub">
+                            <h4 class="cart__sub--heading">Sản Phẩm Đã Thêm</h4>
+                            <ul class="cart__sub--list">
+                                <li class="cart__sub--item">
+                                    <img src="" alt="" class="cart__sub--img">
+                                    <div class="cart__sub--info">
+                                        <div class="cart__sub--itemhead">
+                                            <h5 class="cart__sub--itemname">Giày Adidas M4 Chính hãng</h5>
+                                            <div class="cart__sub--itemtotal">
+                                                <span class="cart__sub--item-price">1.200.000 VND</span>
+                                                <span class="cart__sub--item-multiple">X</span>
+                                                <span class="cart__sub--item-qtn">2</span>
+                                            </div>
+                                        </div>
+                                        <div class="header__cart-item-body">
+                                            <h6 class="header__cart-item-des">Size : 43</h6>
+                                            <span class="header__cart-item-remove">Xóa</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="header__cart--sub">
-                        
+                </div>
+                <div class="header__login col">
+                    <div class="header__login--total">
+                        <a href="#" class="text-decoration-none"><i class="ti-user header__login--icon"></i></a>
                     </div>
                 </div>
             </div>
@@ -112,7 +131,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="grid__column-3-4">
                         <h3 class="footer__heading">Tổng Đài Hổ Trợ</h3>
                         <ul class="footer__heading-list">
                             <li class="footer__heading-item">
@@ -126,7 +145,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="grid__column-1-4">
                         <h3 class="footer__heading">Theo Dõi</h3>
                         <ul class="footer__heading-list">
                             <li class="footer__heading-item">
@@ -143,8 +162,8 @@
                             </li>
                             <li class="footer__heading-item">
                                 <a href="" class="footer__heading-link">
-                                    <i class="footer__heading-icon-linkin fab fa-linkedin"></i>
-                                    Linked-In
+                                    <i class="footer__heading-icon-yout ti-youtube"></i>
+                                    Youtube
                                 </a>
                             </li>
                         </ul>
