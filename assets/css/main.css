@@ -141,7 +141,7 @@
     position: absolute;
     right: -145%;
     top: 130%;
-    background-color: #38b6ff;
+    background-color: #f0f0f0ae;
     width: 450px;
     height: 350px;
     border-radius: 6px;
@@ -177,7 +177,7 @@
 .cart__sub--list {
     padding: 0;
     margin: 0;
-    background-color: rgb(84, 154, 252);
+    background-color: #f0f0f0ae;
     cursor:default;
 }
 
@@ -447,8 +447,3 @@
     padding-right: 5px;
     width: 83.333%;
 }
-
-/* Form Register */
-/* .header__login-regis {
-    display: none;
-} */
