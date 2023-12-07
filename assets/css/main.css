@@ -187,7 +187,7 @@
 }
 
 .cart__sub--item:hover {
-    background-color: rgba(151, 193, 255, 0.749);
+    background-color: #38b6ff;
     cursor: pointer;
 }
 
@@ -229,7 +229,7 @@
     font-size: 1.2rem;
     font-weight: 400;
     margin: 8px 0 0 0;
-    color: #fff
+    color: #000;
 }
 .cart__sub--item-remove {
     margin: 8px 0 0 0;
