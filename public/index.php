@@ -98,7 +98,9 @@
                 </div>
                 <div class="header__login col">
                     <div class="header__login--total">
+                    <div class="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         <a href="#" class="text-decoration-none"><i class="ti-user header__login--icon"></i></a>
+                    </div>
                         
                     </div>
                 </div>
@@ -198,10 +200,54 @@
         </div>
     </div>
 
-    <section class="vh-100 bg-image header__login-regis modal fade " id="staticBackdrop"
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">ĐĂNG KÝ TÀI KHOẢN</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form>
+
+<div class="form-outline mb-4">
+    <label class="form-label" for="form3Example1cg">Tên của bạn</label>
+    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+</div>
+
+<div class="form-outline mb-4">
+    <label class="form-label" for="form3Example4cg">Mật khẩu</label>
+    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+</div>
+
+<div class=" mb-4">
+    <label class="form-label" for="form3Example4cdg">Nhập lại mật khẩu</label>
+    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+</div>
+
+<div class="form-check d-flex justify-content-center mb-5">
+    <label class="form-check-label" for="form2Example3g">
+    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+    Tôi đồng ý với các <a href="#!" class="text-body"><u>Điều khoản của dịch vụ</u></a>
+</label>
+</div>
+
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success d-flex">Đăng Ký</button>
+      </div>
+      <p class="text-center text-muted mt-5 mb-3">Bạn đã có tài khoản? <a href="#!" class="fw-bold text-body"><u>Mời đăng nhập</u></a></p>
+    </div>
+  </div>
+</div>
+
+    <!-- <section class="vh-100 bg-image header__login-regis modal fade " id="staticBackdrop"
         style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-        <div class="mask d-flex align-items-center h-100 gradient-custom-3 modal-dialog">
-            <div class="container h-100">
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3 modal mw-100">
+            <div class="container h-100 ">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div class="card" style="border-radius: 15px;">
@@ -248,9 +294,7 @@
             </div>
             </div>
         </div>
-    </section>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Launch static backdrop modal
-    </button>
+    </section> -->
+    
 </body>
 </html>
