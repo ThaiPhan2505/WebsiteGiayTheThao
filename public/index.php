@@ -15,17 +15,17 @@
 <body>
     <div id="app">
         <div class="container-fluid">
-            <div id="header" class="row position-fixed start-0 end-0">
+            <div id="header" class="row fixed-top start-0 end-0">
                 <div class="header__logo col pl-3">
-                    <a href="#"><img class="header__logo--img img-fluid" src="../images/Logo/logo.png" alt="Logo"></a>
+                    <a href="#"><img class="header__logo--img img-fluid" src="../images/Logo/logo11.png" alt="Logo"></a>
                 </div>
                 <div class="header__total col-8">
                     <ul class="header__total--list">
                         <li>
                             <a href="#" class="text-decoration-none header__total--item">danh mục sản phẩm</a>
                             <div class="header__total--subitem">
-                                <h3 class="header__total--des">Nam</h3>
-                                <h3 class="header__total--des">Nữ</h3>
+                                <h3 class="header__total--des">Giày Nam</h3>
+                                <h3 class="header__total--des">Giày Nữ</h3>
                             </div>
                         </li>
                         <li>
@@ -72,41 +72,47 @@
                 <div class="header__cart col">
                     <div class="header__cart--total">
                         <a href="#" class="text-decoration-none"><i class="ti-shopping-cart header__cart--icon"></i></a>
-                        <div class="header__cart--sub">
-                            <h4 class="cart__sub--heading">Sản Phẩm Đã Thêm</h4>
-                            <ul class="cart__sub--list">
-                                <li class="cart__sub--item">
-                                    <img src="" alt="" class="cart__sub--img">
-                                    <div class="cart__sub--info">
-                                        <div class="cart__sub--itemhead">
-                                            <h5 class="cart__sub--itemname">Giày Adidas M4 Chính hãng</h5>
-                                            <div class="cart__sub--itemtotal">
-                                                <span class="cart__sub--item-price">1.200.000 VND</span>
-                                                <span class="cart__sub--item-multiple">X</span>
-                                                <span class="cart__sub--item-qtn">2</span>
-                                            </div>
-                                        </div>
-                                        <div class="cart__sub--item-body">
-                                            <h6 class="cart__sub--item-des">Size : 43</h6>
-                                            <span class="cart__sub--item-remove">Xóa</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
                 <div class="header__login col">
                     <div class="header__login--total">
-                    <div class="" data-bs-toggle="modal" data-bs-target="#modalDangky">
-                        <a href="#" class="text-decoration-none"><i class="ti-user header__login--icon"></i></a>
-                    </div>
-                        
+                        <div class="" data-bs-toggle="modal" data-bs-target="#modalDangky">
+                            <a href="#" class="text-decoration-none"><i class="ti-user header__login--icon"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div id="body">
+            <div class="banner mt-8">
+                <div id="body__banner" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#body__banner" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#body__banner" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#body__banner" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <img src="../images/Banner/banner_1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="../images/Banner/banner_2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                        <img src="../images/Banner/banner_3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#body__banner" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#body__banner" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div id="footer" class="footer">
             <div class="grid">
