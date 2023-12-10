@@ -104,7 +104,6 @@ class NGUOIDUNG{
 
         return $this;
     }
-
     //Lấy danh sách người dùng
     public function layDanhSachNguoiDung(){
         $conn = new DATABASE();
@@ -122,7 +121,7 @@ class NGUOIDUNG{
         }
     }
     // Lấy người dùng theo id
-    public function layGiayNguoiDung($id){
+    public function layNguoiDungId($id){
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
@@ -138,6 +137,74 @@ class NGUOIDUNG{
             exit();
         }
         return true;
+    }
+    // Thêm
+    public function themNguoiDung($nguoidung){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "INSERT INTO nguoidung(tennguoidung, email, matkhau, sdt, loai, trangthai, hinhanh)
+                VALUES(:tennguoidung, :email, :matkhau, :sdt, :loai, :trangthai, :hinhanh)";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":tennguoidung", $nguoidung->tennguoidung);
+            $cmd->bindValue(":email", $nguoidung->email);
+            $cmd->bindValue(":matkhau", $nguoidung->matkhau);
+            $cmd->bindValue(":sdt", $nguoidung->sdt);
+            $cmd->bindValue(":loai", $nguoidung->loai);
+            $cmd->bindValue(":trangthai", $nguoidung->trangthai);
+            $cmd->bindValue(":hinhanh", $nguoidung->hinhanh);
+            $kq = $cmd->execute();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }
+    // Xóa
+    public function xoaNguoiDung($nguoidung){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "DELETE * FROM nguoidung WHERE id=:id";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":id", $nguoidung->id);
+            $kq = $cmd->execute();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }
+    // Sửa
+    public function suaNguoiDung($nguoidung){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "UPDATE * FROM nguoidung SET tennguoidung = :tennguoidung, 
+                                                email = :email,
+                                                matkhau = :matkhau,
+                                                sdt = :sdt,
+                                                loai = :loai,
+                                                trangthai = :trangthai,
+                                                hinhanh = :hinhanh
+                                                WHERE id=:id";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":tennguoidung", $nguoidung->tennguoidung);
+            $cmd->bindValue(":email", $nguoidung->email);
+            $cmd->bindValue(":matkhau", $nguoidung->matkhau);
+            $cmd->bindValue(":sdt", $nguoidung->sdt);
+            $cmd->bindValue(":loai", $nguoidung->loai);
+            $cmd->bindValue(":trangthai", $nguoidung->trangthai);
+            $cmd->bindValue(":hinhanh", $nguoidung->hinhanh);
+            $kq = $cmd->execute();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
     }
 }
 ?>
