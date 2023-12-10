@@ -76,7 +76,7 @@
                 </div>
                 <div class="header__login col">
                     <div class="header__login--total">
-                        <div class="" data-bs-toggle="modal" data-bs-target="#modalDangky">
+                        <div class="" data-bs-toggle="modal" data-bs-target="#modalDangnhap">
                             <a href="#" class="text-decoration-none"><i class="ti-user header__login--icon"></i></a>
                         </div>
                     </div>
@@ -268,6 +268,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-success d-flex">Đăng Nhập</button>
             </div>
+            <p class="text-center text-muted mt-5 mb-3">Bạn chưa có tài khoản? <a href="#!" class="fw-bold text-body" data-bs-toggle="modal" data-bs-target="#modalDangky"><u>Mời đăng ký tài khoản</u></a></p>
         </div>
     </div>
 </div>
