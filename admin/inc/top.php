@@ -8,11 +8,13 @@
 	
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 
-	<title>Trang quản trị - ABC Shop</title>
+	<title>Cửa Hàng Giày Thể Thao PVT</title>
 
 	<link href="../inc/css/app.css" rel="stylesheet">
 	<script src="../inc/js/app.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="typesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
@@ -20,7 +22,7 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="">
-          <span class="align-middle">ABC Shop</span>
+       	<p class="text-center"><span class="align-middle ">Cửa Hàng Giày Thể Thao PVT</span></p>
         </a>
 
 				<ul class="sidebar-nav">
@@ -46,7 +48,7 @@
 
 					<li class="sidebar-item  active">
 						<a class="sidebar-link" href="../qldanhmuc/index.php">
-						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý danh mục</span>
+						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý giày</span>
 						</a>
 					</li>
 
