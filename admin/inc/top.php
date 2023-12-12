@@ -36,8 +36,8 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_nguoidung") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../quanly_nguoidung/index.php">
 						<i class="align-middle" data-feather="users"></i> <span class="align-middle">Quản lý người dùng</span>
 						</a>
 					</li>
@@ -46,15 +46,21 @@
 						DANH MỤC
 					</li>
 
-					<li class="sidebar-item  active">
-						<a class="sidebar-link" href="../qldanhmuc/index.php">
-						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý giày</span>
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_danhmuc") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../quanly_danhmuc/index.php">
+						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý danh mục</span>
 						</a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="../qlmathang/index.php">
-						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản lý hàng hóa</span>
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_giay") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../quanly_giay/index.php">
+						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản lý giày</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_thuonghieu") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../quanly_thuonghieu/index.php">
+						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản lý thương hiệu</span>
 						</a>
 					</li>
 
