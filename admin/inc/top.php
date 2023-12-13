@@ -80,9 +80,9 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Quản lý doanh thu</span>
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_hoadon") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../quanly_hoadon/index.php">
+						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản lý hóa đơn</span>
 						</a>
 					</li>
 
@@ -93,7 +93,7 @@
 					</li>
 
 					
-					
+					<?php /*
 					<li class="sidebar-header text-info">
 						CẤU HÌNH WEBSITE
 					</li>
@@ -108,7 +108,7 @@
 						<a class="sidebar-link" href="">
 						<i class="align-middle" data-feather="image"></i> <span class="align-middle">Hình ảnh</span>
 						</a>
-					</li>
+					</li>*/ ?>
 				</ul>
 			</div>
 		</nav>
