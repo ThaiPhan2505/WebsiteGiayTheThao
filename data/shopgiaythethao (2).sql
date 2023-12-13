@@ -18,14 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-<<<<<<< HEAD
 -- Cơ sở dữ liệu: `shopgiaythethao`
-=======
--- Database: `shopgiaythethao`
-DROP DATABASE IF EXISTS `shopgiaythethao`;
-CREATE DATABASE IF NOT EXISTS `shopgiaythethao` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `shopgiaythethao`;
->>>>>>> 6b4d31a67ffa8593a4b37fc998203ea2d8862c99
 --
 
 -- --------------------------------------------------------
