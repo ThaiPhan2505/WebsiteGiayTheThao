@@ -30,15 +30,15 @@
 						HỆ THỐNG
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Bảng điều khiển</span>
-						</a>
-					</li>
-
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_nguoidung") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../quanly_nguoidung/index.php">
 						<i class="align-middle" data-feather="users"></i> <span class="align-middle">Quản lý người dùng</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_ykien") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="../quanly_ykien/index.php">
+						<i class="align-middle" data-feather="users"></i> <span class="align-middle">Quản lý phản hồi người dùng</span>
 						</a>
 					</li>
 
