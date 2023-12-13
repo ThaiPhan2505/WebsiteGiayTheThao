@@ -19,6 +19,9 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `shopgiaythethao`
+DROP DATABASE IF EXISTS `shopgiaythethao`;
+CREATE DATABASE IF NOT EXISTS `shopgiaythethao` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `shopgiaythethao`;
 --
 
 -- --------------------------------------------------------
