@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 13, 2023 lúc 07:52 AM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Nov 25, 2023 at 05:01 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,20 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
-<<<<<<< HEAD
--- Cơ sở dữ liệu: `shopgiaythethao`
-=======
 -- Database: `shopgiaythethao`
 DROP DATABASE IF EXISTS `shopgiaythethao`;
 CREATE DATABASE IF NOT EXISTS `shopgiaythethao` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `shopgiaythethao`;
->>>>>>> 6b4d31a67ffa8593a4b37fc998203ea2d8862c99
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `danhmuc`
+-- Table structure for table `danhmuc`
 --
 
 CREATE TABLE `danhmuc` (
@@ -39,18 +35,10 @@ CREATE TABLE `danhmuc` (
   `tendanhmuc` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `danhmuc`
---
-
-INSERT INTO `danhmuc` (`id`, `tendanhmuc`) VALUES
-(1, 'Nam'),
-(2, 'Nữ');
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `diachi`
+-- Table structure for table `diachi`
 --
 
 CREATE TABLE `diachi` (
@@ -62,7 +50,7 @@ CREATE TABLE `diachi` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `giay`
+-- Table structure for table `giay`
 --
 
 CREATE TABLE `giay` (
@@ -72,7 +60,6 @@ CREATE TABLE `giay` (
   `mota` text NOT NULL,
   `id_danhmuc` int(11) NOT NULL,
   `gianhap` decimal(10,2) NOT NULL,
-  `giagoc` decimal(10,2) NOT NULL,
   `giaban` decimal(10,2) NOT NULL,
   `danhgia` int(1) NOT NULL,
   `hinhanh` varchar(255) NOT NULL
@@ -81,7 +68,7 @@ CREATE TABLE `giay` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadon`
+-- Table structure for table `hoadon`
 --
 
 CREATE TABLE `hoadon` (
@@ -96,7 +83,7 @@ CREATE TABLE `hoadon` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadonchitiet`
+-- Table structure for table `hoadonchitiet`
 --
 
 CREATE TABLE `hoadonchitiet` (
@@ -112,7 +99,7 @@ CREATE TABLE `hoadonchitiet` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nguoidung`
+-- Table structure for table `nguoidung`
 --
 
 CREATE TABLE `nguoidung` (
@@ -129,7 +116,7 @@ CREATE TABLE `nguoidung` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `size_soluong`
+-- Table structure for table `size_soluong`
 --
 
 CREATE TABLE `size_soluong` (
@@ -142,7 +129,7 @@ CREATE TABLE `size_soluong` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `thuonghieu`
+-- Table structure for table `thuonghieu`
 --
 
 CREATE TABLE `thuonghieu` (
@@ -150,28 +137,20 @@ CREATE TABLE `thuonghieu` (
   `tenthuonghieu` varchar(100) NOT NULL,
   `diachi` varchar(255) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `sdt` varchar(11) NOT NULL,
-  `hinhanh` varchar(50) NOT NULL
+  `sdt` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `thuonghieu`
+-- Dumping data for table `thuonghieu`
 --
 
-INSERT INTO `thuonghieu` (`id`, `tenthuonghieu`, `diachi`, `email`, `sdt`, `hinhanh`) VALUES
-(1, 'adidas', 'Đức', 'adidas@mail.com', '0156324484', ''),
-(2, 'Nike', 'Hoa Kỳ', 'nike@gmail.com', '0123456789', ''),
-(3, 'Gucci', 'Italia', 'gucci@gmail.com', '0902548763', ''),
-(4, 'Converse', 'Hoa Kỳ', 'converse@gmail.com', '0325874698', ''),
-(5, 'MLB', 'Hàn Quốc', 'MLB@gmail.com', '0231569845', ''),
-(6, 'New Balance', 'Boston, Massachusetts, Hoa Kỳ', 'newbalance@gmail.com', '0254631254', ''),
-(7, 'Puma', 'Herzogenaurach, Bavaria, Đức', 'puma@gmail.com', '0125749611', ''),
-(8, 'Reebok', 'Bolton, Lancashire, Hoa Kỳ', 'reebok@gmail.com', '0125846952', '');
+INSERT INTO `thuonghieu` (`id`, `tenthuonghieu`, `diachi`, `email`, `sdt`) VALUES
+(1, 'adidas', 'awdasdad', 'dada@mail.com', '0156324484');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `y_kien`
+-- Table structure for table `y_kien`
 --
 
 CREATE TABLE `y_kien` (
@@ -182,24 +161,24 @@ CREATE TABLE `y_kien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `danhmuc`
+-- Indexes for table `danhmuc`
 --
 ALTER TABLE `danhmuc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `diachi`
+-- Indexes for table `diachi`
 --
 ALTER TABLE `diachi`
   ADD PRIMARY KEY (`id`),
   ADD KEY `diachi_nguoidung` (`id_nguoidung`);
 
 --
--- Chỉ mục cho bảng `giay`
+-- Indexes for table `giay`
 --
 ALTER TABLE `giay`
   ADD PRIMARY KEY (`id`),
@@ -207,7 +186,7 @@ ALTER TABLE `giay`
   ADD KEY `giay_danhmuc` (`id_danhmuc`);
 
 --
--- Chỉ mục cho bảng `hoadon`
+-- Indexes for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`id`),
@@ -215,123 +194,123 @@ ALTER TABLE `hoadon`
   ADD KEY `hoadon_diachi` (`id_diachi`);
 
 --
--- Chỉ mục cho bảng `hoadonchitiet`
+-- Indexes for table `hoadonchitiet`
 --
 ALTER TABLE `hoadonchitiet`
   ADD KEY `hoadonct_hoadon` (`id_hoadon`),
   ADD KEY `hoadonct_giay` (`id_giay`);
 
 --
--- Chỉ mục cho bảng `nguoidung`
+-- Indexes for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `size_soluong`
+-- Indexes for table `size_soluong`
 --
 ALTER TABLE `size_soluong`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sizesoluong_giay` (`id_giay`);
 
 --
--- Chỉ mục cho bảng `thuonghieu`
+-- Indexes for table `thuonghieu`
 --
 ALTER TABLE `thuonghieu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `y_kien`
+-- Indexes for table `y_kien`
 --
 ALTER TABLE `y_kien`
   ADD PRIMARY KEY (`id`),
   ADD KEY `phanhoi_nguoidung` (`id_nguoidung`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `danhmuc`
+-- AUTO_INCREMENT for table `danhmuc`
 --
 ALTER TABLE `danhmuc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `diachi`
+-- AUTO_INCREMENT for table `diachi`
 --
 ALTER TABLE `diachi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `giay`
+-- AUTO_INCREMENT for table `giay`
 --
 ALTER TABLE `giay`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `nguoidung`
+-- AUTO_INCREMENT for table `nguoidung`
 --
 ALTER TABLE `nguoidung`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `size_soluong`
+-- AUTO_INCREMENT for table `size_soluong`
 --
 ALTER TABLE `size_soluong`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `thuonghieu`
+-- AUTO_INCREMENT for table `thuonghieu`
 --
 ALTER TABLE `thuonghieu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `y_kien`
+-- AUTO_INCREMENT for table `y_kien`
 --
 ALTER TABLE `y_kien`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `diachi`
+-- Constraints for table `diachi`
 --
 ALTER TABLE `diachi`
   ADD CONSTRAINT `diachi_nguoidung` FOREIGN KEY (`id_nguoidung`) REFERENCES `nguoidung` (`id`);
 
 --
--- Các ràng buộc cho bảng `giay`
+-- Constraints for table `giay`
 --
 ALTER TABLE `giay`
   ADD CONSTRAINT `giay_danhmuc` FOREIGN KEY (`id_danhmuc`) REFERENCES `danhmuc` (`id`),
   ADD CONSTRAINT `giay_thuonghieu` FOREIGN KEY (`id_thuonghieu`) REFERENCES `thuonghieu` (`id`);
 
 --
--- Các ràng buộc cho bảng `hoadon`
+-- Constraints for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD CONSTRAINT `hoadon_diachi` FOREIGN KEY (`id_diachi`) REFERENCES `diachi` (`id`),
   ADD CONSTRAINT `hoadon_nguoidung` FOREIGN KEY (`id_nguoidung`) REFERENCES `nguoidung` (`id`);
 
 --
--- Các ràng buộc cho bảng `hoadonchitiet`
+-- Constraints for table `hoadonchitiet`
 --
 ALTER TABLE `hoadonchitiet`
   ADD CONSTRAINT `hoadonct_giay` FOREIGN KEY (`id_giay`) REFERENCES `giay` (`id`),
   ADD CONSTRAINT `hoadonct_hoadon` FOREIGN KEY (`id_hoadon`) REFERENCES `hoadon` (`id`);
 
 --
--- Các ràng buộc cho bảng `size_soluong`
+-- Constraints for table `size_soluong`
 --
 ALTER TABLE `size_soluong`
   ADD CONSTRAINT `sizesoluong_giay` FOREIGN KEY (`id_giay`) REFERENCES `giay` (`id`);
 
 --
--- Các ràng buộc cho bảng `y_kien`
+-- Constraints for table `y_kien`
 --
 ALTER TABLE `y_kien`
   ADD CONSTRAINT `phanhoi_nguoidung` FOREIGN KEY (`id_nguoidung`) REFERENCES `nguoidung` (`id`);
