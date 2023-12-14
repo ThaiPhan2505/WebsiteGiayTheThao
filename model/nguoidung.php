@@ -109,7 +109,7 @@ class NGUOIDUNG{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "SELECT * FROM nguoidung ORDER BY id DESC";
+            $query = "SELECT * FROM nguoidung ORDER BY id ASC";
             $cmd = $dbconn->prepare($query);
             $cmd->execute();
             $kq = $cmd->fetchAll();
@@ -166,7 +166,7 @@ class NGUOIDUNG{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "DELETE * FROM nguoidung WHERE id=:id";
+            $query = "DELETE FROM nguoidung WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":id", $nguoidung->id);
             $kq = $cmd->execute();
@@ -182,14 +182,14 @@ class NGUOIDUNG{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "UPDATE * FROM nguoidung SET tennguoidung = :tennguoidung, 
-                                                email = :email,
-                                                matkhau = :matkhau,
-                                                sdt = :sdt,
-                                                loai = :loai,
-                                                trangthai = :trangthai,
-                                                hinhanh = :hinhanh
-                                                WHERE id=:id";
+            $query = "UPDATE nguoidung SET tennguoidung = :tennguoidung, 
+                                            email = :email,
+                                            matkhau = :matkhau,
+                                            sdt = :sdt,
+                                            loai = :loai,
+                                            trangthai = :trangthai,
+                                            hinhanh = :hinhanh
+                                            WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":tennguoidung", $nguoidung->tennguoidung);
             $cmd->bindValue(":email", $nguoidung->email);
@@ -206,5 +206,41 @@ class NGUOIDUNG{
             exit();
         }
     }
+    // Đổi quyền (loại người dùng: 1 quản trị, 2 nhân viên. Không cần nâng cấp quyền đối với loại người dùng 3-khách hàng)
+    public function doiLoaiNguoiDung($email,$loai){
+		$conn = new DATABASE();
+        $dbconn = $conn->connect();
+		try{
+			$sql = "UPDATE nguoidung set loai=:loai where email=:email";
+			$cmd = $dbconn->prepare($sql);
+			$cmd->bindValue(':email',$email);
+			$cmd->bindValue(':loai',$loai);
+			$ketqua = $cmd->execute();            
+            return $ketqua;
+		}
+		catch(PDOException $e){
+			$error_message=$e->getMessage();
+			echo "<p>Lỗi truy vấn: $error_message</p>";
+			exit();
+		}
+	}
+    // Đổi trạng thái (0 khóa, 1 kích hoạt)
+	public function doiTrangThai($id,$trangthai){
+		$conn = new DATABASE();
+        $dbconn = $conn->connect();
+		try{
+			$sql = "UPDATE nguoidung set trangthai=:trangthai where id=:id";
+			$cmd = $dbconn->prepare($sql);
+			$cmd->bindValue(':id',$id);
+			$cmd->bindValue(':trangthai',$trangthai);
+			$ketqua = $cmd->execute();            
+            return $ketqua;
+		}
+		catch(PDOException $e){
+			$error_message=$e->getMessage();
+			echo "<p>Lỗi truy vấn: $error_message</p>";
+			exit();
+		}
+	}
 }
 ?>
