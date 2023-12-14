@@ -84,6 +84,7 @@ class DANHMUC{
             $query = "UPDATE danhmuc SET tendanhmuc = :tendanhmuc
                                         WHERE id=:id";
             $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":id", $danhmuc->id);
             $cmd->bindValue(":tendanhmuc", $danhmuc->tendanhmuc);
             $kq = $cmd->execute();
             return $kq;

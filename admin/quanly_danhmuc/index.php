@@ -27,6 +27,22 @@ switch($action){
         $danhmuc = $dm->layDanhSachDanhMuc();      
         include("main.php");
         break;
+    case "sua": // hiển thị form
+        $idsua = $_GET["id"];
+        $danhmuc = $dm->layDanhSachDanhMuc();      
+        include("main.php");
+        break;
+    case "capnhat": // lưu dữ liệu sửa mới vào db
+        // gán dữ liệu từ form
+        $dmmoi = new DANHMUC();
+        $dmmoi->setId($_POST["id"]);
+        $dmmoi->setTendanhmuc($_POST["ten"]);
+        // sửa
+        $dm->suaDanhMuc($dmmoi);
+        // load danh sách
+        $danhmuc = $dm->layDanhSachDanhMuc();   
+        include("main.php");
+        break;
     case "xoa":
         // lấy dòng muốn xóa
         $dmxoa = new DANHMUC();
