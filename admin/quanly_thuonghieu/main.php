@@ -1,6 +1,12 @@
 <?php include("../inc/top.php"); ?>
 
 <h4 class="text-info">Danh sách thương hiệu</h4> 
+<br>
+<a href="index.php?action=them" class="btn btn-info">
+	<i class="align-middle" data-feather="plus-circle"></i> 
+	Thêm thương hiệu
+</a>
+<br> <br> 
 <table class="table table-hover">
 	<tr><th>ID</th><th>Tên thương hiệu</th><th>Logo</th>
     <th>Quốc gia</th><th>Email</th><th>Số điện thoại</th><th>Sửa</th><th>Xóa</th></tr>
@@ -26,7 +32,7 @@
 		<tr>
 			<td><?php echo $t["id"]; ?></td>
 			<td><?php echo $t["tenthuonghieu"]; ?></td>
-            <td><?php echo $t["hinhanh"]; ?></td>
+			<td><img src="../../<?php echo $t["hinhanh"]; ?>" width="80" class="img-thumbnail"></td>
             <td><?php echo $t["diachi"]; ?></td>
             <td><?php echo $t["email"]; ?></td>
             <td><?php echo $t["sdt"]; ?></td>
@@ -38,24 +44,5 @@
 	endforeach; 
 	?>
 </table>
-
-<h4><a class="text-decoration-none text-info" data-bs-toggle="collapse" data-bs-target="#demo">Thêm mới</a><h4>
-
-<div id="demo" class="collapse">
-	 
-	<form method="post"> 
-		<input type="hidden" name="action" value="them">
-	<div class="row">	
-		<div class="col">
-			<input type="text" class="form-control" name="ten" placeholder="Nhập tên danh mục">
-		</div>
-		<div class="col">
-			<input type="submit" class="btn btn-info" value="Lưu">
-		</div>
-		<div class="col"></div>
-	</div>
-	</form>
-</div>
-
 
 <?php include("../inc/bottom.php"); ?>

@@ -5,7 +5,8 @@ class THUONGHIEU{
     private $diachi;
     private $email;
     private $sdt;
-
+    private $hinhanh;
+    
     public function getId()
     {
         return $this->id;
@@ -65,6 +66,18 @@ class THUONGHIEU{
 
         return $this;
     }
+
+    public function getHinhanh()
+    {
+        return $this->hinhanh;
+    }
+
+    public function setHinhanh($hinhanh): self
+    {
+        $this->hinhanh = $hinhanh;
+
+        return $this;
+    }
     // Lấy danh sách các thương hiệu
     public function layDanhSachThuongHieu(){
         $conn = new DATABASE();
@@ -86,14 +99,14 @@ class THUONGHIEU{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "INSERT INTO thuonghieu(tenthuonghieu, diachi, email, sdt, logo)
-                VALUES(:tenthuonghieu, :diachi, :email, :sdt, :logo)";
+            $query = "INSERT INTO thuonghieu(tenthuonghieu, diachi, email, sdt, hinhanh)
+                VALUES(:tenthuonghieu, :diachi, :email, :sdt, :hinhanh)";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":tenthuonghieu", $thuonghieu->tenthuonghieu);
             $cmd->bindValue(":diachi", $thuonghieu->diachi);
             $cmd->bindValue(":email", $thuonghieu->email);
             $cmd->bindValue(":sdt", $thuonghieu->sdt);
-            $cmd->bindValue(":logo", $thuonghieu->logo);
+            $cmd->bindValue(":hinhanh", $thuonghieu->hinhanh);
             $kq = $cmd->execute();
             return $kq;
         }
@@ -107,7 +120,7 @@ class THUONGHIEU{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "DELETE * FROM thuonghieu WHERE id=:id";
+            $query = "DELETE FROM thuonghieu WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":id", $thuonghieu->id);
             $kq = $cmd->execute();
@@ -123,19 +136,19 @@ class THUONGHIEU{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "UPDATE * FROM thuonghieu SET tenthuonghieu = :tenthuonghieu, 
-                                                    diachi = :diachi,
-                                                    email = :email,
-                                                    sdt = :sdt,
-                                                    logo = :logo
-                                                    WHERE id=:id";
+            $query = "UPDATE thuonghieu SET tenthuonghieu = :tenthuonghieu, 
+                                                diachi = :diachi,
+                                                email = :email,
+                                                sdt = :sdt,
+                                                hinhanh = :hinhanh
+                                                WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":tenthuonghieu", $thuonghieu->tenthuonghieu);
             $cmd->bindValue(":diachi", $thuonghieu->diachi);
             $cmd->bindValue(":email", $thuonghieu->email);
             $cmd->bindValue(":sdt", $thuonghieu->sdt);
             $cmd->bindValue(":id", $thuonghieu->id);
-            $cmd->bindValue(":logo", $thuonghieu->logo);
+            $cmd->bindValue(":hinhanh", $thuonghieu->hinhanh);
             $kq = $cmd->execute();
             return $kq;
         }
