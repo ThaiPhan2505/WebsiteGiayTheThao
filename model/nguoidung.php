@@ -143,15 +143,14 @@ class NGUOIDUNG{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "INSERT INTO nguoidung(tennguoidung, email, matkhau, sdt, loai, trangthai, hinhanh)
-                VALUES(:tennguoidung, :email, :matkhau, :sdt, :loai, :trangthai, :hinhanh)";
+            $query = "INSERT INTO nguoidung(tennguoidung, email, matkhau, sdt, loai, hinhanh)
+                VALUES(:tennguoidung, :email, :matkhau, :sdt, :loai, :hinhanh)";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":tennguoidung", $nguoidung->tennguoidung);
             $cmd->bindValue(":email", $nguoidung->email);
             $cmd->bindValue(":matkhau", $nguoidung->matkhau);
             $cmd->bindValue(":sdt", $nguoidung->sdt);
             $cmd->bindValue(":loai", $nguoidung->loai);
-            $cmd->bindValue(":trangthai", $nguoidung->trangthai);
             $cmd->bindValue(":hinhanh", $nguoidung->hinhanh);
             $kq = $cmd->execute();
             return $kq;

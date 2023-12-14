@@ -26,6 +26,24 @@ switch($action){
     case "them":        
         include("addform.php");        
         break;
+    case "xulythem":
+        // xử lý file upload
+        $hinhanh = "images/Users/" . basename($_FILES["filehinhanh"]["name"]); // đường dẫn ảnh lưu trong db
+        $duongdan = "../../" . $hinhanh; // nơi lưu file upload (đường dẫn tính theo vị trí hiện hành)
+        move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
+        // xử lý thêm	
+        $account = new NGUOIDUNG();
+        $account->setTennguoidung($_POST["txttennguoidung"]);
+        $account->setEmail($_POST["txtemail"]);
+        $account->setMatkhau($_POST["txtmatkhau"]);
+        $account->setSdt($_POST["txtsdt"]);
+        $account->setLoai($_POST["optloai"]);
+        $account->setHinhanh($hinhanh);
+        $nd->themNguoiDung($account);
+
+        $nguoidung = $nd->layDanhSachNguoiDung(); 
+        include("main.php");        
+        break;
     default:
         break;
 }
