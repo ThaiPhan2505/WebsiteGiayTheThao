@@ -8,7 +8,7 @@ else{   // mặc định là xem danh sách
     $action="xem";
 }
 $th = new THUONGHIEU();
-
+$idsua = 0;
 switch($action){
     case "xem":
         $thuonghieu = $th->layDanhSachThuongHieu();

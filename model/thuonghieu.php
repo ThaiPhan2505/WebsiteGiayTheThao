@@ -70,7 +70,7 @@ class THUONGHIEU{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "SELECT * FROM thuonghieu ORDER BY id DESC";
+            $query = "SELECT * FROM thuonghieu ORDER BY id ASC";
             $cmd = $dbconn->prepare($query);
             $cmd->execute();
             $kq = $cmd->fetchAll();
