@@ -126,4 +126,4 @@
             </div>  
         </div>
 
-<?php include("inc/bottom.php"); ?>     
+<?php include("inc/bottom.php"); ?>
