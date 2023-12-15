@@ -42,6 +42,15 @@ switch($action){
         $giay = $giay->layDanhSachGiay();
         include("main.php");
         break;
+    case "xoa":
+        // lấy dòng muốn xóa
+        $giay->setId($_GET["id"]);
+        // xóa
+        $giay->xoaGiay($giay);
+        // load danh sách
+        $giay = $giay->layDanhSachGiay(); 
+        include("main.php");
+        break;
     default:
         break;
 }

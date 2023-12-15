@@ -190,7 +190,7 @@ class GIAY{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "DELETE * FROM giay WHERE id=:id";
+            $query = "DELETE FROM giay WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":id", $giay->id);
             $kq = $cmd->execute();
