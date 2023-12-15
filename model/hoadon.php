@@ -158,7 +158,7 @@ class HOADON{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "UPDATE * FROM hoadon SET id_nguoidung = :id_nguoidung, 
+            $query = "UPDATE hoadon SET id_nguoidung = :id_nguoidung, 
                                                 id_diachi = :id_diachi,
                                                 ngaylap = :ngaylap,
                                                 tongtien = :tongtien,
@@ -183,7 +183,7 @@ class HOADON{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "DELETE * FROM hoadon WHERE id=:id";
+            $query = "DELETE FROM hoadon WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":id", $hoadon->id);
             $kq = $cmd->execute();
