@@ -6,8 +6,8 @@ class GIAY{
     private $mota;
     private $id_danhmuc;
     private $gianhap;
+    private $giagoc;
     private $giaban;
-    private $danhgia;
     private $hinhanh;
 
     public function getId()
@@ -75,7 +75,18 @@ class GIAY{
         $this->gianhap = $gianhap;
         return $this;
     }
+    
+    public function getGiagoc()
+    {
+        return $this->giagoc;
+    }
 
+    public function setGiagoc($giagoc): self
+    {
+        $this->giagoc = $giagoc;
+
+        return $this;
+    }
     public function getGiaban()
     {
         return $this->giaban;
@@ -84,17 +95,6 @@ class GIAY{
     public function setGiaban($giaban): self
     {
         $this->giaban = $giaban;
-        return $this;
-    }
-
-    public function getDanhgia()
-    {
-        return $this->danhgia;
-    }
-
-    public function setDanhgia($danhgia): self
-    {
-        $this->danhgia = $danhgia;
         return $this;
     }
 
@@ -166,16 +166,16 @@ class GIAY{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "INSERT INTO giay(tengiay, id_thuonghieu, mota, id_danhmuc, gianhap, giaban, danhgia, hinhanh)
-                VALUES(:tengiay, :id_thuonghieu, :mota, :id_danhmuc, :gianhap ,:giaban ,:danhgia ,:hinhanh)";
+            $query = "INSERT INTO giay(tengiay, id_thuonghieu, mota, id_danhmuc, gianhap, giagoc, giaban, hinhanh)
+                VALUES(:tengiay, :id_thuonghieu, :mota, :id_danhmuc, :gianhap, :giagoc, :giaban, :hinhanh)";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":tengiay", $giay->tengiay);
             $cmd->bindValue(":id_thuonghieu", $giay->id_thuonghieu);
             $cmd->bindValue(":mota", $giay->mota);
             $cmd->bindValue(":id_danhmuc", $giay->id_danhmuc);
             $cmd->bindValue(":gianhap", $giay->gianhap);
+            $cmd->bindValue(":giagoc", $giay->giagoc);
             $cmd->bindValue(":giaban", $giay->giaban);
-            $cmd->bindValue(":danhgia", $giay->danhgia);
             $cmd->bindValue(":hinhanh", $giay->hinhanh);
             $kq = $cmd->execute();
             return $kq;
