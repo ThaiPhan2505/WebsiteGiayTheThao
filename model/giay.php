@@ -114,7 +114,7 @@ class GIAY{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "SELECT * FROM giay ORDER BY id DESC";
+            $query = "SELECT * FROM giay ORDER BY id ASC";
             $cmd = $dbconn->prepare($query);
             $cmd->execute();
             $kq = $cmd->fetchAll();
