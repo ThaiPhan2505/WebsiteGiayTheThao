@@ -32,7 +32,6 @@ switch($action){
         $giay->setTengiay($_POST["txttengiay"]);
         $giay->setIdThuonghieu($_POST["optthuonghieu"]);
         $giay->setMota($_POST["txtmota"]);
-        $giay->setgiaban($_POST["txtgiaban"]);
         $giay->setIdDanhmuc($_POST["optdanhmuc"]);
         $giay->setGianhap($_POST["txtgianhap"]);
         $giay->setGiagoc($_POST["txtgiagoc"]);
@@ -40,6 +39,44 @@ switch($action){
         $giay->setHinhanh($hinhanh);
         $giay->themGiay($giay);
         $giay = $giay->layDanhSachGiay();
+        include("main.php");
+        break;
+    case "sua":
+        if(isset($_GET["id"])){ 
+            $g = $giay->layGiayId($_GET["id"]);
+            $danhmuc = $danhmuc->layDanhSachDanhMuc();
+            $thuonghieu = $thuonghieu->layDanhSachThuongHieu();
+            include("updateform.php");
+        }
+        else{
+            $giay->layDanhSachGiay();
+            include("main.php");            
+        }
+        break;
+    case "xulysua":
+        $giay->setId($_POST["txtid"]);
+        $giay->setTengiay($_POST["txttengiay"]);
+        $giay->setIdThuonghieu($_POST["optthuonghieu"]);
+        $giay->setMota($_POST["txtmota"]);
+        $giay->setIdDanhmuc($_POST["optdanhmuc"]);
+        $giay->setGianhap($_POST["txtgianhap"]);
+        $giay->setGiagoc($_POST["txtgiagoc"]);
+        $giay->setGiaban($_POST["txtgiaban"]);
+        $giay->setHinhanh($_POST["txthinhcu"]);
+        // upload file mới (nếu có)
+        if($_FILES["filehinhanh"]["name"]!=""){
+            // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
+            $hinhanh = "images/Brand/" . basename($_FILES["filehinhanh"]["name"]);// đường dẫn lưu csdl
+            $giay->setHinhanh($hinhanh);
+            $duongdan = "../../" . $hinhanh; // đường dẫn lưu upload file        
+            move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);
+        }
+        
+        // sửa mặt hàng
+        $giay->suaGiay($giay);         
+    
+        // hiển thị ds mặt hàng
+        $giay = $giay->layDanhSachGiay();    
         include("main.php");
         break;
     case "xoa":

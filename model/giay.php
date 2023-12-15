@@ -206,24 +206,25 @@ class GIAY{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "UPDATE * FROM giay SET tengiay = :tengiay, 
-                                            id_thuonghieu = :id_thuonghieu,
-                                            mota = :mota,
-                                            id_danhmuc = :id_danhmuc
-                                            gianhap = :gianhap
-                                            giaban = :giaban
-                                            danhgia = :danhgia
-                                            hinhanh = :hinhanh
-                                            WHERE id=:id";
+            $query = "UPDATE giay SET tengiay = :tengiay, 
+                                    id_thuonghieu = :id_thuonghieu,
+                                    mota = :mota,
+                                    id_danhmuc = :id_danhmuc,
+                                    gianhap = :gianhap,
+                                    giagoc = :giagoc,
+                                    giaban = :giaban,
+                                    hinhanh = :hinhanh
+                                    WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":tengiay", $giay->tengiay);
             $cmd->bindValue(":id_thuonghieu", $giay->id_thuonghieu);
             $cmd->bindValue(":mota", $giay->mota);
             $cmd->bindValue(":id_danhmuc", $giay->id_danhmuc);
             $cmd->bindValue(":gianhap", $giay->gianhap);
+            $cmd->bindValue(":giagoc", $giay->giagoc);
             $cmd->bindValue(":giaban", $giay->giaban);
-            $cmd->bindValue(":danhgia", $giay->danhgia);
             $cmd->bindValue(":hinhanh", $giay->hinhanh);
+            $cmd->bindValue(":id", $giay->id);
             $kq = $cmd->execute();
             return $kq;
         }
