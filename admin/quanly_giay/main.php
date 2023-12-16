@@ -30,8 +30,8 @@
 	?>
 		<tr>
 			<td><?php echo $g["id"]; ?></td>
-			<td><?php echo $g["tengiay"]; ?></td>
-			<td><img src="../../<?php echo $g["hinhanh"]; ?>" width="80" class="img-thumbnail"></td>
+			<td><a href="index.php?action=chitiet&id=<?php echo $g['id']?>"><?php echo $g["tengiay"]; ?></td></a>
+			<td><a href="index.php?action=chitiet&id=<?php echo $g['id']?>"><img src="../../<?php echo $g["hinhanh"]; ?>" width="80" class="img-thumbnail"></a></td>
             <td><?php echo $g["gianhap"]; ?></td>
             <td><?php echo $g["giagoc"]; ?></td>
             <td><?php echo $g["giaban"]; ?></td>

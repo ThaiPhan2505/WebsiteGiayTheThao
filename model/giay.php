@@ -143,6 +143,27 @@ class GIAY{
         }
         return true;
     }
+    //Lấy danh sách giày có chứa tên danh mục và thương hiệu theo id
+    public function layDanhSachGiayDmThId($id){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "SELECT giay.*, danhmuc.tendanhmuc as tendanhmuc, thuonghieu.tenthuonghieu as tenthuonghieu
+                    FROM giay
+                    INNER JOIN danhmuc ON giay.id_danhmuc = danhmuc.id
+                    INNER JOIN thuonghieu ON giay.id_thuonghieu = thuonghieu.id
+                    Where giay.id=:id";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":id", $id);
+            $cmd->execute();
+            $kq = $cmd->fetch();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }
     // Lấy giày theo danh mục
     public function layGiayDanhMuc($id_danhmuc){
         $conn = new DATABASE();

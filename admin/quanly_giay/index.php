@@ -88,6 +88,16 @@ switch($action){
         $giay = $giay->layDanhSachGiay(); 
         include("main.php");
         break;
+    case "chitiet":
+        if(isset($_GET["id"])){
+            $g = $giay->layDanhSachGiayDmThId($_GET["id"]);
+            include("chitiet.php");
+        }
+        else{
+            $giay->layDanhSachGiay();     
+            include("main.php");      
+        }
+        break;
     default:
         break;
 }
