@@ -2,7 +2,7 @@
 class HOADON{
     private $id;
     private $id_nguoidung;
-    private $id_diachi;
+    private $diachi;
     private $ngaylap;
     private $tongtien;
     private $ghichu;
@@ -31,14 +31,14 @@ class HOADON{
         return $this;
     }
 
-    public function getIdDiachi()
+    public function getDiachi()
     {
-        return $this->id_diachi;
+        return $this->diachi;
     }
 
-    public function setIdDiachi($id_diachi): self
+    public function setDiachi($diachi): self
     {
-        $this->id_diachi = $id_diachi;
+        $this->diachi = $diachi;
 
         return $this;
     }

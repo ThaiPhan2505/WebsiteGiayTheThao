@@ -12,7 +12,6 @@ else{   // mặc định là xem danh sách
 $giay = new GIAY();
 $danhmuc = new DANHMUC();
 $thuonghieu = new THUONGHIEU();
-$idsua = 0;
 switch($action){
     case "xem":
         $giay = $giay->layDanhSachGiay();
