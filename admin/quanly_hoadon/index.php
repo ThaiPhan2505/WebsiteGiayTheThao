@@ -15,6 +15,15 @@ switch($action){
         $hoadon = $hoadon->layDanhSachHoaDonNd();
         include("main.php");
         break;
+    case "xoa":
+        // lấy dòng muốn xóa
+        $hoadon->setId($_GET["id"]);
+        // xóa
+        $hoadon->xoaHoaDon($hoadon);
+        // load danh sách
+        $hoadon = $hoadon->layDanhSachHoaDonNd();
+        include("main.php");
+        break;
     default:
         break;
 }
