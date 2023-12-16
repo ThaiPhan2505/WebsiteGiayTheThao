@@ -95,6 +95,25 @@ class HOADON{
             exit();
         }
     }
+    // Lấy danh sách các hóa đơn có tên người dùng
+    public function layDanhSachHoaDonNd(){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "SELECT hoadon.*, nguoidung.tennguoidung as tennguoidung
+                    FROM hoadon
+                    INNER JOIN nguoidung ON hoadon.id_nguoidung = nguoidung.id
+                    ORDER BY hoadon.id";
+            $cmd = $dbconn->prepare($query);
+            $cmd->execute();
+            $kq = $cmd->fetchAll();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }
     // Lấy hóa đơn theo id
     public function layHoaDonId($id){
         $conn = new DATABASE();
