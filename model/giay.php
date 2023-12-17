@@ -166,6 +166,23 @@ class GIAY{
             exit();
         }
     }
+    //Lấy danh sách giày
+    public function layDanhSoLuongSizeGiay($id){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "SELECT * FROM size_soluong Where id_giay = :id ORDER BY size ASC";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":id", $id);
+            $cmd->execute();
+            $kq = $cmd->fetchAll();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }
     // Lấy giày theo id
     public function layGiayId($id){
         $conn = new DATABASE();
@@ -275,11 +292,19 @@ class GIAY{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
+            $dbconn->beginTransaction();
+            $query = "DELETE FROM size_soluong where id_giay=:id";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":id", $giay->id);
+            $kq = $cmd->execute();
+
             $query = "DELETE FROM giay WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":id", $giay->id);
             $kq = $cmd->execute();
-            return $kq;
+
+            $dbconn->commit();
+            return true;
         }
         catch(PDOException $ex){
             echo 'Lỗi: ' . $ex->getMessage();

@@ -9,6 +9,18 @@
 <p><strong>Giá nhập: </strong><?php echo number_format($g["gianhap"]); ?>đ</p>
 <p><strong>Giá gốc: </strong><?php echo number_format($g["giagoc"]); ?>đ</p>
 <p><strong>Giá bán: </strong><?php echo number_format($g["giaban"]); ?>đ</p>
+<hr>
+<p><strong>Thông tin về size giày và số lượng</p>
+<?php 
+foreach ($sizeSl as $sl) : 
+?>
+    <p>
+        <strong>Size: </strong><?php echo $sl["size"] . " | "?> 
+        <strong>Số lượng: <?php echo $sl["soluong"]?> </strong>
+    </p>
+<?php 
+endforeach; 
+?>
 <p><a class="btn btn-warning" href="index.php?action=sua&id=<?php echo $g["id"]; ?>"><i class="align-middle" data-feather="edit"></i> Sửa</a> 
 <a class="btn btn-danger" href="index.php?action=xoa&id=<?php echo $g["id"]; ?>"><i class="align-middle" data-feather="trash-2"></i> Xóa</a></p>	
 
@@ -32,26 +44,33 @@
             submitButton.className = "btn btn-primary";
             form.appendChild(submitButton);
         }
+        // hidden input
+        var hiddenInput = document.createElement("input");
+        hiddenInput.type = "hidden";
+        hiddenInput.name = "idGiay";
+        hiddenInput.value = "<?php echo $g['id']; ?>";
+        form.appendChild(hiddenInput);
         // Append the form to the div
         div.appendChild(form);
 
         function createInput(){
+            // Create a div for each pair of inputs
+            var inputDiv = document.createElement("div");
+            inputDiv.id = "inputDiv" + count;
+            form.appendChild(inputDiv);
+            
             // hidden input
             var hiddenInput1 = document.createElement("input");
             hiddenInput1.type = "hidden";
             hiddenInput1.name = "action";
             hiddenInput1.value = "xulythemsizesoluong";
-            form.appendChild(hiddenInput1);
+            inputDiv.appendChild(hiddenInput1);
             // Create a hidden input idGiay
             var hiddenInput2 = document.createElement("input");
             hiddenInput2.type = "hidden";
             hiddenInput2.name = "idGiay"+count;
             hiddenInput2.value = "<?php echo $g['id']; ?>"; // Set value with PHP
-            form.appendChild(hiddenInput2);
-            // Create another div with class 'mt-3' for the Bootstrap margin
-            var space1 = document.createElement("div");
-            space1.className = "mt-3";
-            form.appendChild(space1);
+            inputDiv.appendChild(hiddenInput2);
             // label & input size giày
             var label1 = document.createElement("label");                
             label1.innerHTML = "Nhập size giày: ";
@@ -59,8 +78,8 @@
             input1.type = "number";
             input1.name = "txtsize"+count;
             input1.required = true;
-            form.appendChild(label1);
-            form.appendChild(input1);
+            inputDiv.appendChild(label1);
+            inputDiv.appendChild(input1);
             // label & input số lượng của size giày
             var label2 = document.createElement("label");
             label2.innerHTML = "Nhập số lượng: ";
@@ -68,16 +87,23 @@
             input2.type = "number";
             input2.name = "txtsoluong"+count;
             input2.required = true;
-            form.appendChild(label2);
-            form.appendChild(input2);
-            // Create another div with class 'mt-3' for the Bootstrap margin
-            var space2 = document.createElement("div");
-            space2.className = "mt-3";
-            form.appendChild(space2);
+            input2.className = "ml-3";
+            inputDiv.appendChild(label2);
+            inputDiv.appendChild(input2);
+            // Create a delete button
+            var deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.innerHTML = "X";
+            deleteButton.className = "btn btn-danger ml-3";
+            deleteButton.onclick = function() {
+                inputDiv.remove();
+            };
+            inputDiv.appendChild(deleteButton);
             count++;
         }
     </script>
 </div>
+
 
 <a href="index.php">Trở về danh sách</a>
 <?php include("../inc/bottom.php"); ?>

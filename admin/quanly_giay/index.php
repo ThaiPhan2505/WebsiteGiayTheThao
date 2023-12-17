@@ -50,10 +50,12 @@ switch($action){
             $giay->setIdGiay($_POST["idGiay" .$counter]);
             $giay->setSize($_POST["txtsize" . $counter]);
             $giay->setSoluong($_POST["txtsoluong" . $counter]);
-    
             $counter++;
         }
         $giay->themSoLuongSizeGiay($giays);
+        $g = $giay->layDanhSachGiayDmThId($_POST["idGiay"]);
+        $sizeSl = $giay->layDanhSoLuongSizeGiay($_POST["idGiay"]);
+        include("chitiet.php");
         break;        
     case "sua":
         if(isset($_GET["id"])){ 
@@ -105,6 +107,7 @@ switch($action){
     case "chitiet":
         if(isset($_GET["id"])){
             $g = $giay->layDanhSachGiayDmThId($_GET["id"]);
+            $sizeSl = $giay->layDanhSoLuongSizeGiay($_GET["id"]);
             include("chitiet.php");
         }
         else{
