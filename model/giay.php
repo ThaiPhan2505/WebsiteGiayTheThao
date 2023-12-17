@@ -1,5 +1,6 @@
 <?php
 class GIAY{
+    // properties of Giay
     private $id;
     private $tengiay;
     private $id_thuonghieu;
@@ -9,6 +10,11 @@ class GIAY{
     private $giagoc;
     private $giaban;
     private $hinhanh;
+    // properties of size_soluong
+    private $id_giay;
+    private $soluong;
+    private $size;
+
 
     public function getId()
     {
@@ -109,6 +115,41 @@ class GIAY{
         return $this;
     }
 
+    public function getIdGiay()
+    {
+        return $this->id_giay;
+    }
+
+    public function setIdGiay($id_giay): self
+    {
+        $this->id_giay = $id_giay;
+
+        return $this;
+    }
+
+    public function getSoluong()
+    {
+        return $this->soluong;
+    }
+
+    public function setSoluong($soluong): self
+    {
+        $this->soluong = $soluong;
+
+        return $this;
+    }
+
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    public function setSize($size): self
+    {
+        $this->size = $size;
+
+        return $this;
+    }
     //Lấy danh sách giày
     public function layDanhSachGiay(){
         $conn = new DATABASE();
@@ -206,6 +247,29 @@ class GIAY{
             exit();
         }
     }
+    // Thêm size và số lượng giày
+    public function themSoLuongSizeGiay($giays){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "INSERT INTO size_soluong(id_giay, size, soluong)
+                VALUES(:id_giay, :size, :soluong)";
+            $cmd = $dbconn->prepare($query);
+    
+            foreach($giays as $giay) {
+                $cmd->bindValue(":id_giay", $giay->id_giay);
+                $cmd->bindValue(":size", $giay->size);
+                $cmd->bindValue(":soluong", $giay->soluong);
+                $kq = $cmd->execute();
+            }
+    
+            return true;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }    
     //Xóa
     public function xoaGiay($giay){
         $conn = new DATABASE();

@@ -40,6 +40,21 @@ switch($action){
         $giay = $giay->layDanhSachGiay();
         include("main.php");
         break;
+    case "xulythemsizesoluong":
+        $giays = array();
+        $counter = 0;
+        while((isset($_POST['idGiay' . $counter]) && $_POST['txtsize' . $counter]) && 
+        isset($_POST['txtsoluong' . $counter])) {
+            $giay = new GIAY();
+            $giays[] = $giay;
+            $giay->setIdGiay($_POST["idGiay" .$counter]);
+            $giay->setSize($_POST["txtsize" . $counter]);
+            $giay->setSoluong($_POST["txtsoluong" . $counter]);
+    
+            $counter++;
+        }
+        $giay->themSoLuongSizeGiay($giays);
+        break;        
     case "sua":
         if(isset($_GET["id"])){ 
             $g = $giay->layGiayId($_GET["id"]);
