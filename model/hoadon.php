@@ -155,13 +155,12 @@ class HOADON{
         $conn = new DATABASE();
         $dbconn = $conn->connect();
         try{
-            $query = "INSERT INTO hoadon(id_nguoidung, id_diachi, ngaylap, tongtien, ghichu)
-                VALUES(:id_nguoidung, :id_diachi, :ngaylap, :tongtien, :ghichu)";
+            $query = "INSERT INTO hoadon(id_nguoidung, diachi, ngaylap, ghichu)
+                VALUES(:id_nguoidung, :diachi, :ngaylap, :ghichu)";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":id_nguoidung", $hoadon->id_nguoidung);
-            $cmd->bindValue(":id_diachi", $hoadon->id_diachi);
+            $cmd->bindValue(":diachi", $hoadon->diachi);
             $cmd->bindValue(":ngaylap", $hoadon->ngaylap);
-            $cmd->bindValue(":tongtien", $hoadon->tongtien);
             $cmd->bindValue(":ghichu", $hoadon->ghichu);
             $kq = $cmd->execute();
             return $kq;

@@ -15,12 +15,26 @@ switch($action){
         $hoadon = $hoadon->layDanhSachHoaDonNd();
         include("main.php");
         break;
+    case "them":
+        $nguoidung = $nguoidung->layDanhSachNguoiDung();
+        include("addform.php");
+        break;
     case "xoa":
         // lấy dòng muốn xóa
         $hoadon->setId($_GET["id"]);
         // xóa
         $hoadon->xoaHoaDon($hoadon);
         // load danh sách
+        $hoadon = $hoadon->layDanhSachHoaDonNd();
+        include("main.php");
+        break;
+    case "xulythem":
+        $hoadon->setIdNguoidung($_POST["optnguoidung"]);
+        $hoadon->setDiachi($_POST["txtdiachi"]);
+        $hoadon->setNgaylap($_POST["txtngaylap"]);
+        $hoadon->setGhichu($_POST["txtghichu"]);
+
+        $hoadon->themHoaDon($hoadon);
         $hoadon = $hoadon->layDanhSachHoaDonNd();
         include("main.php");
         break;
