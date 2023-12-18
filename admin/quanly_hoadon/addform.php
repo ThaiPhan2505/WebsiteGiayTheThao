@@ -44,6 +44,4 @@
 		<input type="reset" value="Hủy" class="btn btn-warning">
 	</div>
 </form>
-
-
 <?php include("../inc/bottom.php"); ?>

@@ -2,6 +2,7 @@
 require("../../model/database.php");
 require("../../model/hoadon.php");
 require("../../model/nguoidung.php");
+require("../../model/giay.php");
 if(isset($_REQUEST["action"])){
     $action = $_REQUEST["action"];
 }
@@ -10,6 +11,7 @@ else{   // mặc định là xem danh sách
 }
 $nguoidung = new NGUOIDUNG();
 $hoadon = new HOADON();
+$giay = new GIAY();
 switch($action){
     case "xem":
         $hoadon = $hoadon->layDanhSachHoaDonNd();
@@ -37,6 +39,17 @@ switch($action){
         $hoadon->themHoaDon($hoadon);
         $hoadon = $hoadon->layDanhSachHoaDonNd();
         include("main.php");
+        break;
+    case "themchitiet":
+        if(isset($_GET["id"])){ 
+            $hd = $_GET["id"];
+            $giay = $giay->layDanhSachGiay();
+            include("adddetailform.php");
+        }
+        else{
+            $hoadon = $hoadon->layDanhSachHoaDonNd();
+            include("main.php");            
+        }
         break;
     default:
         break;
