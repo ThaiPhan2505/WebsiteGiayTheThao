@@ -24,14 +24,25 @@
                         <li>
                             <a href="#" class="text-decoration-none header__total--item">danh mục sản phẩm</a>
                             <div class="header__total--subitem">
-                                <h3 class="header__total--des">Giày Nam</h3>
-                                <h3 class="header__total--des">Giày Nữ</h3>
+                                <?php 
+                                    foreach ($danhmuc as $dm):
+                                ?>
+                                <h3 class="header__total--des">Giày <?php echo $dm["tendanhmuc"] ?></h3>
+                                <?php endforeach ?>
                             </div>
                         </li>
                         <li>
                             <a href="#" class="text-decoration-none header__total--item">Thương Hiệu</a>
                             <div class="header__total--subitem">
                                 <div class="header__total--main">
+                                    <?php 
+                                        foreach($thuonghieu as $th):
+                                    ?>
+                                    <div class="header__subitem--logo">
+                                        <a href=""><img src="../<?php echo $th["hinhanh"] ?>" alt="" class="header__subitem--img"></a>
+                                    </div>
+                                    <?php endforeach ?>
+                                    <!--
                                     <div class="header__subitem--logo">
                                         <a href=""><img src="../images/Brand/Adidas-removebg-preview.png" alt="" class="header__subitem--img"></a>
                                     </div>
@@ -56,6 +67,7 @@
                                     <div class="header__subitem--logo">
                                         <a href=""><img src="../images/Brand/Adidas-removebg-preview.png" alt="" class="header__subitem--img"></a>
                                     </div>
+                                    -->
                                 </div>
                             </div>
                         </li>
