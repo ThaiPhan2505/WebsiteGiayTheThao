@@ -231,7 +231,25 @@ class GIAY{
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":id_danhmuc", $id_danhmuc);
             $cmd->execute();
-            $kq = $cmd->fetch();
+            $kq = $cmd->fetchAll();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+        return true;
+    }
+    // Lấy giày theo danh mục
+    public function layGiayTheoThuongHieu($id_thuonghieu){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "SELECT * FROM giay WHERE id_thuonghieu=:id_thuonghieu";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":id_thuonghieu", $id_thuonghieu);
+            $cmd->execute();
+            $kq = $cmd->fetchAll();
             return $kq;
         }
         catch(PDOException $ex){

@@ -25,10 +25,24 @@ switch($action){
     case "groupdanhmuc":
         if(isset($_REQUEST["id"])){
             $madm = $_REQUEST["id"];
-            $danhmuc = $danhmuc->layDanhSachDanhMucTheoId($madm);
-            $tendm = $danhmuc["tendanhmuc"];
+            $thuonghieu = $thuonghieu->layDanhSachThuongHieu();
+            $dmuc = $danhmuc->layDanhSachDanhMucTheoId($madm);
+            $danhmuc = $danhmuc->layDanhSachDanhMuc();
             $giay = $giay->layGiayDanhMuc($madm);
             include("groupdanhmuc.php");
+        }
+        else{
+            include("main.php");
+        }
+        break;
+    case "groupthuonghieu":
+        if(isset($_REQUEST["id"])){
+            $math = $_REQUEST["id"];
+            $danhmuc = $danhmuc->layDanhSachDanhMuc();
+            $t_hieu = $thuonghieu->layThuongHieuId($math);
+            $thuonghieu = $thuonghieu->layDanhSachThuongHieu();
+            $giay = $giay->layGiayTheoThuongHieu($math);
+            include("groupthuonghieu.php");
         }
         else{
             include("main.php");

@@ -41,7 +41,7 @@
                                         foreach($thuonghieu as $th):
                                     ?>
                                     <div class="header__subitem--logo">
-                                        <a href="index.php"><img src="../<?php echo $th["hinhanh"] ?>" alt="" class="header__subitem--img"></a>
+                                        <a href="?action=groupthuonghieu&id=<?php echo $th["id"] ?>"><img src="../<?php echo $th["hinhanh"] ?>" alt="" class="header__subitem--img"></a>
                                     </div>
                                     <?php endforeach ?>
                                     <!--
