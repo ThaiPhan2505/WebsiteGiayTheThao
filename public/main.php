@@ -33,16 +33,35 @@
                 <div class="text-center container py-5">
                     <h4 class="mt-4 mb-5"><strong>Sản Phẩm</strong></h4>
                     <div class="row">
+                        <?php 
+                        foreach($danhmuc as $dm){
+                        $i = 0;
+                        ?>
+                        <a href="index.php?action=groupdanhmuc" class="text-decoration-none">
+                            <h5 class="text-primary float-left">
+                                <strong>Giày <?php echo $dm["tendanhmuc"] ?></strong>
+                            </h5>
+                        </a>
+                        <?php foreach($giay as $g){
+                            if($g["id_danhmuc"] == $dm["id"] && $i < 3){
+                                $i++;
+                        ?>
                         <div class="col-lg-4 col-md-12 mb-4">
                             <div class="card">
                                 <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                                     data-mdb-ripple-color="light">
-                                    <img src="../images/Product/giay1.jpg"
+                                    <img src="../<?php $g['hinhanh'] ?>"
                                     class="w-50" />
                                     <a href="#!">
                                     <div class="mask">
                                         <div class="d-flex justify-content-start align-items-end h-100">
-                                        <h5><span class="badge bg-primary ms-2">Mới</span></h5>
+                                        <?php if($g["giagoc"] <= $g["giaban"]){ ?>
+                                            <h5><span class="badge bg-primary ms-2">Mới</span></h5><?php }?>
+                                        <?php if($g["giagoc"] > $g["giaban"]){ 
+                                            $discount = (($g["giagoc"] - $g["giaban"]) / $g["giagoc"]) * 100
+                                            ?>
+                                            <h5><span class="badge bg-danger ms-2">-<?php echo number_format($discount, 0, '.', '.')?>%</span></h5><?php }?>
+
                                     </div>
                                     </div>
                                     <div class="hover-overlay">
@@ -52,16 +71,24 @@
                                 </div>
                                 <div class="card-body">
                                     <a href="" class="text-reset">
-                                    <h5 class="card-title mb-3">Adidas Untraboost</h5>
+                                    <h5 class="card-title mb-3"><?php echo $g["tengiay"] ?></h5>
                                     </a>
                                     <a href="" class="text-decoration-none">
                                     <p>Giày mang êm chân</p>
                                     </a>
-                                    <h6 class="mb-3">1.500.000 đ</h6>
+                                    <?php if($g["giagoc"] > $g["giaban"]){ ?>
+                                    <s><?php echo $g["giagoc"] ?> đ</s><strong class="ms-2 text-danger"><?php echo $g["giaban"] ?> đ</s></strong><?php }?>
+                                    <?php if($g["giagoc"] <= $g["giaban"]){ ?>
+                                    <h6 class="mb-3"><?php echo number_format($g["giaban"], 0, '.', '.')?> đ</h6><?php }?>
                                 </div>
                             </div>
                         </div>
-
+                        <?php 
+                                }
+                            }    
+                        }
+                        ?>
+                        <!--
                         <div class="col-lg-4 col-md-6 mb-4">
                             <div class="card">
                                 <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
@@ -119,7 +146,7 @@
                                     </h6>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>  

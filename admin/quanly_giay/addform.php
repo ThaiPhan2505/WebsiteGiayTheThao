@@ -43,15 +43,15 @@
 	</div>
     <div class="mb-3 mt-3">
         <label for="txtgianhap" class="form-label">Giá nhập</label>
-        <input class="form-control" type="number" name="txtgianhap" value="0">
+        <input class="form-control" type="number" name="txtgianhap" value="" required>
     </div>
     <div class="mb-3 mt-3">
         <label for="txtgiaban" class="form-label">Giá gốc</label>
-        <input class="form-control" type="number" name="txtgiagoc" value="0">
+        <input class="form-control" type="number" name="txtgiagoc" value="" required>
     </div>
     <div class="mb-3 mt-3">
         <label for="txtgianhap" class="form-label">Giá bán</label>
-        <input class="form-control" type="number" name="txtgiaban" value="0">
+        <input class="form-control" type="number" name="txtgiaban" value="" required>
     </div>
 	<div class="mb-3 mt-3">
 		<input type="submit" value="Lưu" class="btn btn-success">

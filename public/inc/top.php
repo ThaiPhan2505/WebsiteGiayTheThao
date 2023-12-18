@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div id="header" class="row fixed-top start-0 end-0">
                 <div class="header__logo col pl-3">
-                    <a href="#"><img class="header__logo--img img-fluid" src="../images/Logo/logo11.png" alt="Logo"></a>
+                    <a href="index.php"><img class="header__logo--img img-fluid" src="../images/Logo/logo11.png" alt="Logo"></a>
                 </div>
                 <div class="header__total col-8">
                     <ul class="header__total--list">
@@ -27,7 +27,9 @@
                                 <?php 
                                     foreach ($danhmuc as $dm):
                                 ?>
-                                <h3 class="header__total--des">Giày <?php echo $dm["tendanhmuc"] ?></h3>
+                                <a class="text-decoration-none" href="?action=groupdanhmuc&id=<?php echo $dm["id"]; ?>">
+                                    <h3 class="header__total--des">Giày <?php echo $dm["tendanhmuc"] ?></h3>
+                                </a>
                                 <?php endforeach ?>
                             </div>
                         </li>
@@ -39,7 +41,7 @@
                                         foreach($thuonghieu as $th):
                                     ?>
                                     <div class="header__subitem--logo">
-                                        <a href=""><img src="../<?php echo $th["hinhanh"] ?>" alt="" class="header__subitem--img"></a>
+                                        <a href="index.php"><img src="../<?php echo $th["hinhanh"] ?>" alt="" class="header__subitem--img"></a>
                                     </div>
                                     <?php endforeach ?>
                                     <!--

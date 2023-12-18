@@ -43,6 +43,23 @@ class DANHMUC{
             exit();
         }
     }
+    //Lấy danh danh mục
+    public function layDanhSachDanhMucTheoId($id){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "SELECT * FROM danhmuc WHERE id=:id";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":id", $id);
+            $cmd->execute();
+            $kq = $cmd->fetch();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }
     // Thêm
     public function themDanhmuc($danhmuc){
         $conn = new DATABASE();
