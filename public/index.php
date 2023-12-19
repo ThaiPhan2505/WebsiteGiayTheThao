@@ -35,6 +35,15 @@ switch($action){
             include("main.php");
         }
         break;
+    case "detail":
+        if(isset($_GET["id"])){
+            $id = $_GET["id"];
+            $g = $giay->layDanhSachGiayDmThId($_GET["id"]);
+            $thuonghieu = $thuonghieu->layDanhSachThuongHieu();
+            $danhmuc = $danhmuc->layDanhSachDanhMuc();
+            include("detail.php");
+        }
+        break;
     case "groupthuonghieu":
         if(isset($_REQUEST["id"])){
             $math = $_REQUEST["id"];

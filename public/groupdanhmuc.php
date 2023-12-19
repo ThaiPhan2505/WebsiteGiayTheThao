@@ -12,8 +12,10 @@
                 <div class="card">
                     <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                         data-mdb-ripple-color="light">
-                        <img src="../<?php $g['hinhanh'] ?>"
-                        class="w-50" />
+                        <a href="index.php?action=detail&id=<?php echo $g["id"]; ?>">
+                            <img src="../<?php echo $g['hinhanh'] ?>"
+                            class="w-50" />
+                        </a>
                         <a href="#!">
                         <div class="mask">
                             <div class="d-flex justify-content-start align-items-end h-100">
@@ -32,7 +34,7 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <a href="" class="text-reset">
+                        <a href="index.php?action=detail&id=<?php echo $g["id"]; ?>" class="text-reset">
                         <h5 class="card-title mb-3"><?php echo $g["tengiay"] ?></h5>
                         </a>
                         <a href="" class="text-decoration-none">

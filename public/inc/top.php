@@ -75,7 +75,7 @@
                         </li>
                         <li><a href="#" class="text-decoration-none header__total--item">Chính Sách Bảo Hành</a></li>
                         <li><a href="#" class="text-decoration-none header__total--item">Thông Tin Cửa Hàng</a></li>
-                        <li><a href="#" class="text-decoration-none header__total--item"><?php echo $_SESSION["nguoidung"]["tengnuoidung"]; ?></a></li>
+                        <li><a href="#" class="text-decoration-none header__total--item"></a></li>
                     </ul>
                 </div>
                 <div class="header__search col">
