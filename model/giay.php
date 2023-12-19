@@ -361,5 +361,22 @@ class GIAY{
             exit();
         }
     }
+    //Tìm kiếm giày theo tên
+    public function timKiem($name){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "SELECT * FROM giay Where LOWER(tengiay) LIKE LOWER(:name)";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":name", "%" . $name . "%");
+            $cmd->execute();
+            $kq = $cmd->fetchAll();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }
 }
 ?>

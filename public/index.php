@@ -58,10 +58,14 @@ switch($action){
         }
         break;
     case "giohang":
+        $thuonghieu = $thuonghieu->layDanhSachThuongHieu();
+        $danhmuc = $danhmuc->layDanhSachDanhMuc();
         $giohang = laygiohang();
         include("cart.php");
         break;
     case "chovaogio":
+        $thuonghieu = $thuonghieu->layDanhSachThuongHieu();
+        $danhmuc = $danhmuc->layDanhSachDanhMuc();
         if(isset($_REQUEST["id"]))
             $id = $_REQUEST["id"];
         if(isset($_REQUEST["soluong"]))
@@ -92,11 +96,26 @@ switch($action){
             $giohang = laygiohang();
             include("cart.php");
             break;
-        case "xoagiohang":
-            xoagiohang();
-            $giohang = laygiohang();
-            include("cart.php");
-            break;
+    case "xoagiohang":
+        xoagiohang();
+        $giohang = laygiohang();
+        include("cart.php");
+        break;
+    case "timkiem":
+        if($_POST["txttimkiem"] != ""){
+            $thuonghieu = $thuonghieu->layDanhSachThuongHieu();
+            $danhmuc = $danhmuc->layDanhSachDanhMuc();
+            $ten = $_POST["txttimkiem"];
+            $giay = $giay->timKiem($ten);
+            include("timkiem.php");
+        }
+        else{
+            $thuonghieu = $thuonghieu->layDanhSachThuongHieu();
+            $danhmuc = $danhmuc->layDanhSachDanhMuc();
+            $giay = $giay->layDanhSachGiay();
+            include("main.php");
+        }
+        break;
     default:
         break;
 }

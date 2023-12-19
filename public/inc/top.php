@@ -11,6 +11,14 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        button.text-decoration-none.header__total--item {
+            border: none;  /* Removes border */
+            outline: none; /* Removes outline */
+            background: none; /* Removes default gray background */
+        }
+    </style>
+
 </head>
 <body>
     <div id="app">
@@ -80,8 +88,12 @@
                 </div>
                 <div class="header__search col">
                     <div class="header__search--total">
-                        <a href="#" class="text-decoration-none header__total--item"><i class="ti-search header__search--icon"></i></a>
-                        <input class="header__search--input" type="text" placeholder="  Bạn Muốn Tìm Kiếm Gì ?">
+                        <form action="index.php?action=timkiem" method="post">
+                            <button type="submit" class="text-decoration-none header__total--item">
+                                <i class="ti-search header__search--icon"></i>
+                            </button>
+                            <input class="header__search--input" type="text" name="txttimkiem" placeholder="  Bạn Muốn Tìm Kiếm Gì ?">
+                        </form>
                     </div>
                 </div>
                 <div class="header__cart col">
