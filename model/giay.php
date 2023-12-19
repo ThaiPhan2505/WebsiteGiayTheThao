@@ -240,7 +240,7 @@ class GIAY{
         }
         return true;
     }
-    // Lấy giày theo danh mục
+    // Lấy giày theo thương hiệu
     public function layGiayTheoThuongHieu($id_thuonghieu){
         $conn = new DATABASE();
         $dbconn = $conn->connect();

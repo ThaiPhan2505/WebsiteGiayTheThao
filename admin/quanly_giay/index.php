@@ -1,7 +1,8 @@
 <?php
+/*
 if(!isset($_SESSION["nguoidung"]))
 header("location:../index.php");
-
+*/
 require("../../model/database.php");
 require("../../model/giay.php");
 require("../../model/danhmuc.php");
@@ -86,7 +87,7 @@ switch($action){
         // upload file mới (nếu có)
         if($_FILES["filehinhanh"]["name"]!=""){
             // xử lý file upload -- Cần bổ dung kiểm tra: dung lượng, kiểu file, ...       
-            $hinhanh = "images/Brand/" . basename($_FILES["filehinhanh"]["name"]);// đường dẫn lưu csdl
+            $hinhanh = "images/Product/" . basename($_FILES["filehinhanh"]["name"]);// đường dẫn lưu csdl
             $giay->setHinhanh($hinhanh);
             $duongdan = "../../" . $hinhanh; // đường dẫn lưu upload file        
             move_uploaded_file($_FILES["filehinhanh"]["tmp_name"], $duongdan);

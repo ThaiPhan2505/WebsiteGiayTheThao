@@ -6,6 +6,12 @@ class HOADON{
     private $ngaylap;
     private $tongtien;
     private $ghichu;
+    // properties of chitiethoadon
+    private $id_hoadon;
+    private $id_giay;
+    private $dongia;
+    private $soluong;
+    private $thanhtien;
 
     public function getId()
     {
@@ -170,7 +176,51 @@ class HOADON{
             exit();
         }
     }
+    // Thêm chi tiết hóa đơn
+    public function themChiTietHoaDon1($hoadon){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "INSERT INTO hoadonchit(id_hoadon, id_giay, dongia, soluong, thanhtien)
+                VALUES(:id_hoadon, :id_giay, :dongia, :soluong, :thanhtien)";
+            $cmd = $dbconn->prepare($query);
+            $cmd->bindValue(":id_hoadon", $hoadon->id_hoadon);
+            $cmd->bindValue(":id_giay", $hoadon->id_giay);
+            $cmd->bindValue(":dongia", $hoadon->dongia);
+            $cmd->bindValue(":soluong", $hoadon->soluong);
+            $cmd->bindValue(":thanhtien", $hoadon->thanhtien);
+            $kq = $cmd->execute();
+            return $kq;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }    
+    // Thêm chi tiết hóa đơn
+    public function themChiTietHoaDon($hoadons){
+        $conn = new DATABASE();
+        $dbconn = $conn->connect();
+        try{
+            $query = "INSERT INTO hoadonchitiet(id_hoadon, id_giay, dongia, soluong, thanhtien)
+                VALUES(:id_hoadon, :id_giay, :dongia, :soluong, :thanhtien)";
+            $cmd = $dbconn->prepare($query);
 
+            foreach($hoadons as $hoadon) {
+                $cmd->bindValue(":id_hoadon", $hoadon->id_hoadon);
+                $cmd->bindValue(":id_giay", $hoadon->id_giay);
+                $cmd->bindValue(":dongia", $hoadon->dongia);
+                $cmd->bindValue(":soluong", $hoadon->soluong);
+                $cmd->bindValue(":thanhtien", $hoadon->thanhtien);
+                $kq = $cmd->execute();
+            }
+            return true;
+        }
+        catch(PDOException $ex){
+            echo 'Lỗi: ' . $ex->getMessage();
+            exit();
+        }
+    }    
     // Sửa
     public function suaHoaDon($hoadon){
         $conn = new DATABASE();
@@ -211,6 +261,96 @@ class HOADON{
             echo 'Lỗi: ' . $ex->getMessage();
             exit();
         }
+    }
+
+    /**
+     * Get the value of id_hoadon
+     */
+    public function getIdHoadon()
+    {
+        return $this->id_hoadon;
+    }
+
+    /**
+     * Set the value of id_hoadon
+     */
+    public function setIdHoadon($id_hoadon): self
+    {
+        $this->id_hoadon = $id_hoadon;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of thanhtien
+     */
+    public function getThanhtien()
+    {
+        return $this->thanhtien;
+    }
+
+    /**
+     * Set the value of thanhtien
+     */
+    public function setThanhtien($thanhtien): self
+    {
+        $this->thanhtien = $thanhtien;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id_giay
+     */
+    public function getIdGiay()
+    {
+        return $this->id_giay;
+    }
+
+    /**
+     * Set the value of id_giay
+     */
+    public function setIdGiay($id_giay): self
+    {
+        $this->id_giay = $id_giay;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dongia
+     */
+    public function getDongia()
+    {
+        return $this->dongia;
+    }
+
+    /**
+     * Set the value of dongia
+     */
+    public function setDongia($dongia): self
+    {
+        $this->dongia = $dongia;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of soluong
+     */
+    public function getSoluong()
+    {
+        return $this->soluong;
+    }
+
+    /**
+     * Set the value of soluong
+     */
+    public function setSoluong($soluong): self
+    {
+        $this->soluong = $soluong;
+
+        return $this;
     }
 } 
 ?>

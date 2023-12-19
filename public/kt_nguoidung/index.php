@@ -26,6 +26,7 @@ switch($action){
         header("Location:../../public");
         break;
     case "xldangnhap":
+        /*
         $email = $_REQUEST["txtemail"];
         $matkhau = $_REQUEST["txtmatkhau"];
         if($nguoidung->kiemTraNguoiDungHopLe($email,$matkhau)==TRUE){
@@ -43,7 +44,7 @@ switch($action){
             unset($_SESSION["nguoidung"]);
             header("Location:../../public");
         }
-        break;
+        break;*/
     case "dangxuat":
         unset($_SESSION["nguoidung"]);  // hủy biến session
         //include("login.php");         // hiển thị trang login
