@@ -1,8 +1,12 @@
 <?php
+if(!isset($_SESSION["nguoidung"]))
+header("location:../index.php");
+
 require("../../model/database.php");
 require("../../model/giay.php");
 require("../../model/danhmuc.php");
 require("../../model/thuonghieu.php");
+
 if(isset($_REQUEST["action"])){
     $action = $_REQUEST["action"];
 }

@@ -4,14 +4,9 @@
     <div class="text-center container py-5">
         <h4 class="mt-4 mb-5"><strong>Sản Phẩm</strong></h4>
         <div class="row">
-            <a href="index.php?action=groupdanhmuc&id=<?php echo $dm['id']?>" class="text-decoration-none">
-                <h5 class="text-primary float-left">
-                    <strong>Giày <?php echo $dm["tendanhmuc"] ?></strong>
-                </h5>
-            </a>
             <?php 
             if($giay != null){
-                foreach($giay as $g)
+                foreach($giay as $g):
             ?>
             <div class="col-lg-4 col-md-12 mb-4">
                 <div class="card">
@@ -51,6 +46,9 @@
                 </div>
             </div>
             <?php 
+            endforeach;} 
+            else{
+                echo "<p>Danh mục này hiện chưa có mặt hàng. Vui lòng xem danh mục khác...</p>";
             }
             ?>
         </div>

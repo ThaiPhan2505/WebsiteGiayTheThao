@@ -30,17 +30,13 @@
 						HỆ THỐNG
 					</li>
 
+					<?php if(isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"]==1){ ?>
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_nguoidung") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../quanly_nguoidung/index.php">
 						<i class="align-middle" data-feather="users"></i> <span class="align-middle">Quản lý người dùng</span>
 						</a>
 					</li>
-
-					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_ykien") != false) echo "active"; ?>">
-						<a class="sidebar-link" href="../quanly_ykien/index.php">
-						<i class="align-middle" data-feather="users"></i> <span class="align-middle">Quản lý phản hồi người dùng</span>
-						</a>
-					</li>
+					<?php } ?>
 
 					<li class="sidebar-header text-info">
 						DANH MỤC
@@ -66,29 +62,11 @@
 
 					<li class="sidebar-header text-info">
 						KINH DOANH
-					</li>
-					
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="users"></i> <span class="align-middle">Quản lý khách hàng</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="truck"></i> <span class="align-middle">Quản lý đơn hàng</span>
-						</a>
-					</li>
+					</li>	
 
 					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"quanly_hoadon") != false) echo "active"; ?>">
 						<a class="sidebar-link" href="../quanly_hoadon/index.php">
 						<i class="align-middle" data-feather="package"></i> <span class="align-middle">Quản lý hóa đơn</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="">
-						<i class="align-middle" data-feather="shopping-bag"></i> <span class="align-middle">Chương trình khuyến mãi</span>
 						</a>
 					</li>
 
@@ -172,9 +150,7 @@
 												<img src="../../images/users/doraemon.jpg" class="avatar img-fluid rounded-circle" alt="Mèo máy Đô rê mon">
 											</div>
 											<div class="col-10 ps-2">
-												<div class="text-dark">Doraemon</div>
-												<div class="text-muted small mt-1">Mail của mèo máy đến từ tương lai nè ^.^</div>
-												<div class="text-muted small mt-1">15 phút trước</div>
+												
 											</div>
 										</div>
 									</a>
@@ -191,15 +167,15 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img src="../../images/users/user.png" class="avatar img-fluid rounded me-1" alt="Quản trị viên" /> 
-								<span class="text-dark">Quản trị viên</span>
+								<img src="<?php  echo "../../" . $_SESSION["nguoidung"]["hinhanh"] ?>" class="avatar img-fluid rounded me-1" alt="" /> 
+								<span class="text-dark">Chào <?php echo $_SESSION["nguoidung"]["tennguoidung"] ?></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="user"></i> Hồ sơ cá nhân</a>								
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="key"></i> Đổi mật khẩu</a>
 								
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="log-out"></i> Đăng xuất</a>
+								<a class="dropdown-item" href="../kt_nguoidung/index.php?action=dangxuat"><i class="align-middle me-1" data-feather="log-out"></i> Đăng xuất</a>
 							</div>
 						</li>
 					</ul>

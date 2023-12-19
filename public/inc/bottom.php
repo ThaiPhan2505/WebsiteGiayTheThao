@@ -138,19 +138,21 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="../public/kt_nguoidung/index.php" method="post">
+                    <input type="hidden" name="action" value="xldangnhap">
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="form3Example1cg">Tên của bạn</label>
-                        <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example1cg">Email của bạn</label>
+                        <input name="txtemail" type="text" id="form3Example1cg" class="form-control form-control-lg" />
                     </div>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example4cg">Mật khẩu</label>
-                        <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                        <input name="txtmatkhau" type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                    </div>    
+            
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success d-flex">Đăng nhập</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success d-flex">Đăng Nhập</button>
             </div>
             <p class="text-center text-muted mt-5 mb-3">Bạn chưa có tài khoản? <a href="#!" class="fw-bold text-body" data-bs-toggle="modal" data-bs-target="#modalDangky"><u>Mời đăng ký tài khoản</u></a></p>
         </div>

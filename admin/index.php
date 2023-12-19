@@ -1,3 +1,4 @@
 <?php
-	header("location:quanly_giay");
+session_start();
+header("location:kt_nguoidung");
 ?>

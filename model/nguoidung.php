@@ -138,6 +138,44 @@ class NGUOIDUNG{
         }
         return true;
     }
+    public function kiemTraNguoiDungHopLe($email,$matkhau){
+		$conn = new DATABASE();
+        $dbconn = $conn->connect();
+		try{
+			$query = "SELECT * FROM nguoidung WHERE email=:email AND matkhau=:matkhau AND trangthai=1";
+			$cmd = $dbconn->prepare($query);
+			$cmd->bindValue(":email", $email);
+			$cmd->bindValue(":matkhau", $matkhau);
+			$cmd->execute();
+			$valid = ($cmd->rowCount () == 1);
+			$cmd->closeCursor();
+			return $valid;			
+		}
+		catch(PDOException $e){
+			$error_message=$e->getMessage();
+			echo "<p>Lỗi truy vấn: $error_message</p>";
+			exit();
+		}
+	}
+    // lấy thông tin người dùng có $email
+	public function layThongTinNguoiDung($email){
+		$conn = new DATABASE();
+        $dbconn = $conn->connect();
+		try{
+			$query = "SELECT * FROM nguoidung WHERE email=:email";
+			$cmd = $dbconn->prepare($query);
+			$cmd->bindValue(":email", $email);
+			$cmd->execute();
+			$ketqua = $cmd->fetch();
+			$cmd->closeCursor();
+			return $ketqua;
+		}
+		catch(PDOException $e){
+			$error_message=$e->getMessage();
+			echo "<p>Lỗi truy vấn: $error_message</p>";
+			exit();
+		}
+	}
     // Thêm
     public function themNguoiDung($nguoidung){
         $conn = new DATABASE();

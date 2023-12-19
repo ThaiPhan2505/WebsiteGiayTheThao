@@ -75,6 +75,7 @@
                         </li>
                         <li><a href="#" class="text-decoration-none header__total--item">Chính Sách Bảo Hành</a></li>
                         <li><a href="#" class="text-decoration-none header__total--item">Thông Tin Cửa Hàng</a></li>
+                        <li><a href="#" class="text-decoration-none header__total--item"><?php echo $_SESSION["nguoidung"]["tengnuoidung"]; ?></a></li>
                     </ul>
                 </div>
                 <div class="header__search col">
@@ -89,11 +90,22 @@
                     </div>
                 </div>
                 <div class="header__login col">
+                    <?php if(isset($_SESSION["nguoidung"]) && $_SESSION["nguoidung"]["loai"]==3){ 
+                            echo $_SESSION["nguoidung"]["tengnuoidung"];
+                        
+                    ?>
+                    <?php
+                        }
+                        else{
+                    ?>
                     <div class="header__login--total">
                         <div class="" data-bs-toggle="modal" data-bs-target="#modalDangnhap">
                             <a href="#" class="text-decoration-none"><i class="ti-user header__login--icon"></i></a>
                         </div>
-                    </div>
+                    </div>   
+                    <?php 
+                        }
+                    ?>
                 </div>
             </div>
         </div>

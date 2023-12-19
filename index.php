@@ -1,3 +1,4 @@
 <?php
-    header("Location:public");
+session_start();
+header("Location:public/kt_nguoidung");
 ?>
