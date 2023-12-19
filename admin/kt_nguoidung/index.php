@@ -30,12 +30,9 @@ switch($action){
         $matkhau = $_REQUEST["txtmatkhau"];
         if($nguoidung->kiemTraNguoiDungHopLe($email,$matkhau)==TRUE){
             $_SESSION["nguoidung"] = $nguoidung->layThongTinNguoiDung($email); // đặt biến session
-            if(isset($_SESSION["nguoidung"]["loai"]) != 3 ){
-                include("main.php");
-            }
+            include("main.php");
         }
         else{
-            unset($_SESSION["nguoidung"]);
             include("login.php");
         }
         break;
