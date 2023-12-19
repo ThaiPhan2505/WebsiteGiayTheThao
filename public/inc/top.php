@@ -86,7 +86,7 @@
                 </div>
                 <div class="header__cart col">
                     <div class="header__cart--total">
-                        <a href="#" class="text-decoration-none"><i class="ti-shopping-cart header__cart--icon"></i></a>
+                        <a href="index.php?action=giohang" class="text-decoration-none"><i class="ti-shopping-cart header__cart--icon"></i></a>
                     </div>
                 </div>
                 <div class="header__login col">
