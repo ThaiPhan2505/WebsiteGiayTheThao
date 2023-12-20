@@ -167,14 +167,14 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img src="<?php  echo "../../" . $_SESSION["nguoidung"]["hinhanh"] ?>" class="avatar img-fluid rounded me-1" alt="" /> 
+								<img src="<?php if ($_SESSION["nguoidung"]["hinhanh"]==NULL) echo "../../images/Users/user.png";?>" class="avatar img-fluid rounded me-1" alt="" /> 
 								<span class="text-dark">Chào <?php echo $_SESSION["nguoidung"]["tennguoidung"] ?></span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="user"></i> Hồ sơ cá nhân</a>								
+								<!--<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="user"></i> Hồ sơ cá nhân</a>								
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="key"></i> Đổi mật khẩu</a>
 								
-								<div class="dropdown-divider"></div>
+								<div class="dropdown-divider"></div>-->
 								<a class="dropdown-item" href="../kt_nguoidung/index.php?action=dangxuat"><i class="align-middle me-1" data-feather="log-out"></i> Đăng xuất</a>
 							</div>
 						</li>

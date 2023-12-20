@@ -38,8 +38,8 @@ switch($action){
         break;
     case "dangxuat":
         unset($_SESSION["nguoidung"]);  // hủy biến session
-        //include("login.php");         // hiển thị trang login
-        header("location:../../index.php");     // hoặc chuyển hướng ra bên ngoài (trang dành cho khách)
+        include("login.php");         // hiển thị trang login
+        //header("location:../../index.php");     // hoặc chuyển hướng ra bên ngoài (trang dành cho khách)
         break;  
     default:
         break;

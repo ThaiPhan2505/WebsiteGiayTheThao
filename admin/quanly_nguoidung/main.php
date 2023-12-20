@@ -15,7 +15,7 @@
 	?>
     <tr>
         <td><?php echo $nd["id"]; ?></td>
-        <td><img src="../../<?php echo $nd["hinhanh"]; ?>" width="80" class="img-thumbnail"></td>
+        <td><img src="<?php if ($nd["hinhanh"]==NULL) echo "../../images/Users/user.png"; else echo "../../" . $nd["hinhanh"];?>" width="80" class="img-thumbnail"></td>
         <td><?php echo $nd["tennguoidung"]; ?></td>
         <td><?php echo $nd["email"]; ?></td>
         <td><?php echo $nd["sdt"]; ?></td>

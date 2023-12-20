@@ -227,17 +227,16 @@ class HOADON{
         $dbconn = $conn->connect();
         try{
             $query = "UPDATE hoadon SET id_nguoidung = :id_nguoidung, 
-                                                id_diachi = :id_diachi,
+                                                diachi = :diachi,
                                                 ngaylap = :ngaylap,
-                                                tongtien = :tongtien,
                                                 ghichu = :ghichu
                                                 WHERE id=:id";
             $cmd = $dbconn->prepare($query);
             $cmd->bindValue(":id_nguoidung", $hoadon->id_nguoidung);
-            $cmd->bindValue(":id_diachi", $hoadon->id_diachi);
+            $cmd->bindValue(":diachi", $hoadon->diachi);
             $cmd->bindValue(":ngaylap", $hoadon->ngaylap);
-            $cmd->bindValue(":tongtien", $hoadon->tongtien);
             $cmd->bindValue(":ghichu", $hoadon->ghichu);
+            $cmd->bindValue(":id", $hoadon->id);
             $kq = $cmd->execute();
             return $kq;
         }

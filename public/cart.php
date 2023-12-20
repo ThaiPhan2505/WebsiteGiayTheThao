@@ -49,9 +49,8 @@ else{
         <div class="col text-end">
             <input type="hidden" name="action" value="capnhatgio">
             <input class="btn btn-warning" type="submit" value="Cập nhật">
-            <a href="index.php?action=thanhtoan" class="btn btn-success">Thanh toán</a>
+            <!--<a href="index.php?action=thanhtoan" class="btn btn-success">Thanh toán</a>-->
         </div>
     </div>
 </form>
 <?php } ?>
-<?php include("../public/inc/bottom.php") ?>

@@ -42,6 +42,31 @@ switch($action){
         $hoadon = $hoadon->layDanhSachHoaDonNd();
         include("main.php");
         break;
+    case "sua":
+        if(isset($_GET["id"])){ 
+            $hd = $hoadon->layHoaDonId($_GET["id"]);
+            $nguoidung = $nguoidung->layDanhSachNguoiDung();
+            include("updateform.php");
+        }
+        else{
+            $hoadon->layDanhSachHoaDon();
+            include("main.php");            
+        }
+        break;
+    case "xulysua":
+        $hDon = new HOADON();
+        $hDon->setId($_POST["txtid"]);
+        $hDon->setIdNguoidung($_POST["optnguoidung"]);
+        $hDon->setDiachi($_POST["txtdiachi"]);
+        $hDon->setNgaylap($_POST["txtngaylap"]);
+        $hDon->setGhichu($_POST["txtghichu"]);
+        // sửa mặt hàng
+        $hoadon->suaHoaDon($hDon);         
+    
+        // hiển thị ds mặt hàng
+        $hoadon = $hoadon->layDanhSachHoaDonNd();   
+        include("main.php");
+        break;
     case "themchitiet":
         if(isset($_GET["id"])){ 
             $hd = $_GET["id"];
@@ -55,9 +80,12 @@ switch($action){
         }
         break;
     case "xulythemchitiethoadon":
-        $counter = 1;
+        $hoadons = array();
+        $counter = 0;
         while((isset($_POST['idhoadon'. $counter]) && isset($_POST['optgiay' . $counter]) && $_POST['giaban' . $counter]) && 
         isset($_POST['txtsoluong' . $counter]) && isset($_POST['txttxtthanhtien' . $counter])) {
+            $hoadon = new HOADON();
+            $hoadons[] = $hoadon;
             $hoadon->setIdHoadon($_POST["idhoadon" . $counter]);
             $hoadon->setIdGiay($_POST["optgiay" . $counter]);
             $hoadon->setDongia($_POST["giaban" . $counter]);
